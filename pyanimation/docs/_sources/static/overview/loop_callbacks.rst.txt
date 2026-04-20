@@ -1,0 +1,27 @@
+Loop callbacks
+==============
+
+In some cases, it might be necessary to run code inside the main loop of the :class:`~pynimation.viewer.viewer.Viewer`. For example to modify some objects, or provide further user interaction than available with :ref:`Event bindings`. To do this, PyNimation provides two ways to register callback functions that will be called at different steps of the main loop
+
+Single callback
+---------------
+
+| When a single callback function is sufficient, and it does not require a lot of inputs, callback functions can be registered individually.
+| Single callbacks can be added to the viewer loop via the :func:`~pynimation.viewer.viewer.Viewer.addCallback` function of the :class:`~pynimation.viewer.viewer.Viewer` class. 
+| The following example taken from `examples/callbacks.py`_ defines a callback that moves a :class:`~pynimation.viewer.objects.Cube` object before each frame is displayed
+.. literalinclude:: ../../../examples/callbacks.py
+
+| The :code:`BEFORE_DISPLAY` value specifies that the callback should be called before the frame is displayed. To call it at a different step of the loop, other values of :class:`~pynimation.viewer.viewer.Viewer.CallbackTime` can be used
+| The cube object is given in the :code:`args` argument so that the :code:`moveCube` callback receives it as an argument each time it is called
+
+The Unity way
+-------------
+
+| Callback function can also be added by inheriting from the :class:`~pynimation.viewer.loop.CallableLoop` class and overriding its :func:`~pynimation.viewer.loop.CallableLoop.beforeDisplay` and :func:`~pynimation.viewer.loop.CallableLoop.afterDisplay` functions.
+| This approach is similar to writing a Unity script. It provides a way to structure the application code so as to store data and additional methods in the class, and be able to access them from the callback functions
+| The following example taken from `examples/objects_and_mainloop.py`_ defines a subclass of :class:`~pynimation.viewer.loop.CallableLoop` that stores various objects those transforms are modified by the callbacks
+
+.. note:: Both :func:`~pynimation.viewer.loop.CallableLoop.beforeDisplay` and :func:`~pynimation.viewer.loop.CallableLoop.afterDisplay` methods need to be defined in any subclass of :class:`~pynimation.viewer.loop.CallableLoop`. Use :code:`pass` if one of them is unused
+
+.. literalinclude:: ../../../examples/objects_and_mainloop.py
+

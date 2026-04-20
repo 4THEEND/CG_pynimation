@@ -1,0 +1,8 @@
+
+Arrow
+-----
+.. autoclass:: pynimation.viewer.objects.arrow.Arrow
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

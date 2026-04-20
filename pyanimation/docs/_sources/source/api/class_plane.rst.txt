@@ -1,0 +1,8 @@
+
+Plane
+-----
+.. autoclass:: pynimation.viewer.objects.plane.Plane
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

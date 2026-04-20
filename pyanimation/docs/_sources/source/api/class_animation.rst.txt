@@ -1,0 +1,8 @@
+
+Animation
+---------
+.. autoclass:: pynimation.anim.animation.Animation
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

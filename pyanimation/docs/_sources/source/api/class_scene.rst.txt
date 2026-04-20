@@ -1,0 +1,8 @@
+
+Scene
+-----
+.. autoclass:: pynimation.viewer.scene.Scene
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

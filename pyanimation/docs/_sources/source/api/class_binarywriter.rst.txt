@@ -1,0 +1,8 @@
+
+BinaryWriter
+------------
+.. autoclass:: pynimation.io.binarywriter.BinaryWriter
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

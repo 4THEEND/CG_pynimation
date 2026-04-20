@@ -1,0 +1,28 @@
+Module Organisation
+===================
+
+General Organisation
+--------------------
+
+The majority of PyNimation's API is made of classes, and in most cases they each have their own file (or modules in Python's lingo) named after them. for example the :class:`~pynimation.anim.frame.Frame` class is in the :code:`frame.py` file  ( or :code:`frame` module) and is the only class there. Class modules are regrouped into larger, more general modules, that are directly accessible through the pynimation namespace:
+
+* :code:`pynimation.anim`
+* :code:`pynimation.io`
+* :code:`pynimation.common`
+* :code:`pynimation.viewer`
+
+To find out where a module is located, refer to the :ref:`API`, where each class is listed with its parent modules.
+
+Import Shortcuts
+----------------
+
+| For convenience, all API symbols can be directly imported from the module they are under in the :code:`pynimation` namespace.
+| Consider this example : to import the :class:`~pynimation.anim.frame.Frame` class of the :code:`pynimation.anim.frame` module with the full path, you would have:
+
+::
+
+  from pynimation.anim.frame import Frame
+
+As a shortcut, it can be directly imported from the :code:`anim` module of the :code:`pynimation` namespace with::
+
+  from pynimation.anim import Frame

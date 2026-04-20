@@ -1,0 +1,8 @@
+
+FBXMesh
+-------
+.. autoclass:: pynimation.viewer.io.fbx.mesh.FBXMesh
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

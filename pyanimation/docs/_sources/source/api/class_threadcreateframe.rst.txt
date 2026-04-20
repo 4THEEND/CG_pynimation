@@ -1,0 +1,8 @@
+
+ThreadCreateFrame
+-----------------
+.. autoclass:: pynimation.io.bvh.importer.ThreadCreateFrame
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

@@ -1,0 +1,46 @@
+Introduction
+============
+
+This sections describes how to contribute to the project, from installing requirements to conforming to the conventions adopted
+
+Requirements
+============
+
+Installation
+--------------------
+::
+
+    pip install -r requirements.txt
+
+
+Add to Python path
+------------------
+
+| While examples can be run as is when pynimation is installed, you might not want to install your development version each time you need to run tests or examples.
+| The solution is to add the path to the :code:`pynimation` package to the Python path
+| From the root of the repository:
+
+
+* from python (effective until the program exits)::
+
+    import sys
+    import os
+    sys.path.insert(0, os.path.abspath("."))
+
+* from Linux shell:
+
+  You can either define an environment variable for a single shell session or for a single command
+
+  * shell session::
+
+      export PYTHONPATH="${PYTHONPATH-}${PYTHONPATH+":"}$(pwd)"
+
+  * single command::
+
+      PYTHONPATH="${PYTHONPATH}:$(pwd)" python examples/myexample.py
+
+
+* from Windows cmd::
+    
+    set PYTHONPATH=[absolute path to pynimation]
+

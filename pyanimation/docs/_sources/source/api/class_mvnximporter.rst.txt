@@ -1,0 +1,8 @@
+
+MVNXImporter
+------------
+.. autoclass:: pynimation.io.mvnx.importer.MVNXImporter
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

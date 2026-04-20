@@ -1,0 +1,105 @@
+Getting Started
+===============
+
+In this section, we will review an example demonstrating the main uses of PyNimation, the example file is available in the repository under :code:`examples/getting_started.py`
+
+Load animations
+---------------
+
+| Animations can be imported using the :func:`~pynimation.io.importer.load` function, it takes the path to an animation file in one of the supported formats, and returns a list of animations in the internal format.
+| The :func:`~pynimation.io.importer.load` function is located inside the :mod:`pynimation.io.importer` module, however, like all symbols of the API, it is possible to import it from the module it is under in the :code:`pynimation` namespace. We can therefore write :code:`from pynimation.io import load`. See :ref:`Module Organisation` for more.
+::
+
+  from pynimation.io import load
+  from pynimation.common import data
+  from copy import deepcopy
+
+  # obtain path to provided example BVH animation file
+  bvh_file = data.getDataPath("data/animations/AH_100_long.bvh")
+
+  # load the animation
+  [animation] = load(bvh_file)
+
+  # keep the original untouched
+  animationPost = deepcopy(animation)
+
+.. note:: Here, the :code:`data.getDataPath` function is used to get the runtime path of the example animations provided with PyNimation, unless you import one of the assets provided with PyNimation, you won't need to use this function.
+
+| We also make a copy of the original animation to later compare it to its modified version
+
+Access and modify animations
+----------------------------
+
+PyNimation handles per-frame skeletal animations. An animation is comprised of a :attr:`~pynimation.anim.animation.Animation.skeleton` (a set of bones to animate) and the list of spatial transforms of those bones at each frame of the animation.
+
+Access frames
+*************
+
+| The main interface to access and modify the content of the animation is the :attr:`frames` attribute. 
+::
+
+  # process the animation
+
+  # access the frames
+  for i in range(10, 200):
+      frame = animationPost.frames[i]
+      # edit frame.localTransforms
+
+| Its elements are instances of the :class:`~pynimation.anim.frame.Frame` class. The :class:`~pynimation.anim.frame.Frame` class holds the transforms for the skeleton's joints under the :attr:`~pynimation.anim.frame.Frame.localTransforms` attribute. The tranfsorm of each joint is accessible through its joint :attr:`~pynimation.anim.joint.Joint.id` in the :attr:`~pynimation.anim.frame.Frame.localTransforms` list.
+
+Access and modify joint transforms
+**********************************
+
+| If we are interested in modifying the transform of the right knee joint for example, we first have to get its id in the skeleton. This can be done by searching through the skeleton's :attr:`~pynimation.anim.skeleton.Skeleton.joints` list, looking at :attr:`~pynimation.anim.skeleton.Skeleton.name` attributes, or directly through the provided :attr:`~pynimation.anim.skeleton.Skeleton.jointsNames` property.
+::
+
+  from scipy.spatial.transform import Rotation
+
+  # get the id of the joint to be modified
+  knee_joint_id = animation.skeleton.jointsNames.index("RightKnee")
+
+  # access joint transform
+  kneeTransform = frame.localTransforms[knee_joint_id]
+  # modify joint transform
+  r = Rotation.from_euler("xyz", [90, 0, 0], degrees=True).as_matrix()
+  kneeTransform.rotate(r)
+
+| Once the joint's transform is obtained, it is modified via the :class:`~pynimation.common.transform.Transform` API. This class provides tools to edit spatial transforms in meaningful ways, like :attr:`~pynimation.common.transform.translate`, :attr:`~pynimation.common.transform.rotate`, :attr:`~pynimation.common.transform.scale`, etc.
+| Here, we use `scipy.spatial.transform.Rotation <https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.transform.Rotation.html>`_ to compute the rotation matrix of a 90° clockwise rotation along the :code:`X` axis and feed it as input to :attr:`~pynimation.common.transform.rotate`.
+
+.. note:: Note that transforms of :attr:`localTransforms` are local (i.e. relative to their parent). Global transforms, that are relative to the skeleton's root are also available through the :attr:`~pynimation.anim.frame.Frame.globalTransforms` attributes. These global transforms are updated automatically to reflect the local transform they correspond to. See :ref:`Local and Global Transforms` for more.
+
+Visualize animations
+--------------------
+
+| PyNimation comes with an interactive OpenGL visualization engine that can display multiple objects and animations arranged in a scene, we will refer to it simply as the viewer.
+
+| The viewer offers a very flexible API, objects and animations can be displayed in one call, they can be precisely arranged in a scene, or the main loop can be entirely re-written to fit the user's needs. We will be reviewing the simplest API here, see :ref:`Viewer` for more.
+::
+
+  from pynimation.viewer import Viewer
+
+  # display original and modified animations side by side
+  Viewer().displayAnimations([animation, animationPost])
+
+| The :attr:`~pynimation.viewer.viewer.Viewer.displayAnimations` call will create characters with the animations it is given, it will add them to a new scene with a textured floor, and display the scene in an interactive loop. The keys for interacting with the viewer are described in :ref:`Key Bindings`
+
+Export animations
+-----------------
+
+Exporting works in a similar way as importing, it is done through a single :func:`~pynimation.io.exporter.save` function, common to all formats. For now, only :code:`FBX` is supported for exporting
+::
+
+    from pynimation.io import save
+
+    # export the modified animation
+    save(animationPost, "modified.fbx")
+
+Put together
+------------
+
+To summarize, here is the complete example of what a typical import/process/visualize/export pipeline might look like. The example file is available in the repo under `examples/getting_started.py`_
+
+.. literalinclude:: ../../../examples/getting_started.py
+
+

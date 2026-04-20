@@ -1,0 +1,8 @@
+
+Vec3
+----
+.. autoclass:: pynimation.common.vec3.Vec3
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

@@ -1,0 +1,38 @@
+Coding Style
+============
+
+Naming
+------
+
+Conventions
+***********
+
+Here is a table summarizing the naming conventions used for the various components of
+pynimations:
+
++--------------------+--------------------+------------------------------------------------------------------+
+| component          | naming convention  | examples                                                         |
++====================+====================+==================================================================+
+| variable, function | :code:`mixedCase`  | :code:`variable`, :code:`myVariable`, :code:`mySuperVariable`    |
++--------------------+--------------------+------------------------------------------------------------------+
+| constant           | :code:`ALL_CAPS`   | :code:`CONSTANT`, :code:`MY_CONSTANT`, :code:`MY_SUPER_CONSTANT` |
++--------------------+--------------------+------------------------------------------------------------------+
+| class              | :code:`CamelCase`  | :code:`Class`, :code:`MyClass`, :code:`MySuperClass`             |
++--------------------+--------------------+------------------------------------------------------------------+
+| module (file)      | :code:`snake_case` | :code:`module`, :code:`my_module`, :code:`my_super_module`       |
++--------------------+--------------------+------------------------------------------------------------------+
+
+Private members
+***************
+
+Classes, attributes and methods should begin with a single :code:`_` if they are
+private. A member or class that is not part of the API and is not intented to
+be used by end users should be private
+
+
+Formatting
+----------
+The standard code format of the project can be achieved by running :code:`black --line-length 79 .` in the root of the project. See `black <https://github.com/psf/black>`_ for installation and integration with your editor
+
+
+

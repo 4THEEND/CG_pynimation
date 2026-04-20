@@ -1,0 +1,1236 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>save &mdash; pynimation 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="load" href="func_load.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            pynimation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../static/introduction/introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../static/introduction/introduction.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../static/introduction/introduction.html#features">Features</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../static/introduction/getting_started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../static/introduction/getting_started.html#load-animations">Load animations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../static/introduction/getting_started.html#access-and-modify-animations">Access and modify animations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../static/introduction/getting_started.html#access-frames">Access frames</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../static/introduction/getting_started.html#access-and-modify-joint-transforms">Access and modify joint transforms</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../static/introduction/getting_started.html#visualize-animations">Visualize animations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../static/introduction/getting_started.html#export-animations">Export animations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../static/introduction/getting_started.html#put-together">Put together</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../static/overview/module_organization.html">Module Organisation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../static/overview/module_organization.html#general-organisation">General Organisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../static/overview/module_organization.html#import-shortcuts">Import Shortcuts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../static/overview/local_global_transforms.html">Local and Global Transforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../static/overview/loop_callbacks.html">Loop callbacks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../static/overview/loop_callbacks.html#single-callback">Single callback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../static/overview/loop_callbacks.html#the-unity-way">The Unity way</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../static/overview/event_bindings.html">Event bindings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../static/overview/event_bindings.html#events">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../static/overview/event_bindings.html#adding-bindings">Adding bindings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../static/overview/event_bindings.html#with-bind">With bind()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../static/overview/event_bindings.html#with-the-bindings-attribute">With the <code class="code docutils literal notranslate"><span class="pre">bindings</span></code> attribute</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../static/overview/event_bindings.html#accessing-the-runtime-event">Accessing the runtime <code class="code docutils literal notranslate"><span class="pre">Event</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../static/overview/event_bindings.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../default_bindings.html">Default bindings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../static/overview/troubleshooting.html">Common Issues</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../static/overview/troubleshooting.html#failed-to-compile-shader-on-linux">Failed to compile shader on Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../static/overview/troubleshooting.html#context-error">Context error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../static/overview/troubleshooting.html#client-error-while-installing-with-pip-on-linux">404 Client Error while installing with pip on Linux</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../static/overview/troubleshooting.html#update-pip">Update pip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../static/overview/troubleshooting.html#install-with-the-gitlab-index-as-main-index">Install with the gitlab index as main index</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../static/overview/troubleshooting.html#importerror-dll-load-failed-while-importing-fbx">ImportError: DLL load failed while importing fbx</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../static/overview/troubleshooting.html#check-if-fbxsdkpy-is-installed">Check if fbxsdkpy is installed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../static/overview/troubleshooting.html#verify-fbxsdkpy-is-in-the-python-path">Verify fbxsdkpy is in the python path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../static/overview/troubleshooting.html#verify-the-python-binary-is-64bits">Verify the python binary is 64bits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../static/overview/troubleshooting.html#check-if-the-dependencies-are-installed">Check if the dependencies are installed</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../static/overview/troubleshooting.html#windows">Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../static/overview/troubleshooting.html#linux">Linux</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../static/development/requirements.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../static/development/requirements.html#requirements">Requirements</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../static/development/requirements.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../static/development/requirements.html#add-to-python-path">Add to Python path</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../static/development/coding_style.html">Coding Style</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../static/development/coding_style.html#naming">Naming</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../static/development/coding_style.html#conventions">Conventions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../static/development/coding_style.html#private-members">Private members</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../static/development/coding_style.html#formatting">Formatting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../static/development/type_hints.html">Type hints</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../static/development/type_hints.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../static/development/type_hints.html#typing-your-code">Typing your code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../static/development/type_hints.html#circular-imports">Circular imports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../static/development/type_hints.html#existing-code">Existing code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../static/development/documentation.html">Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../static/development/documentation.html#style">Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../static/development/documentation.html#generation">Generation</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Class reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="class_analyticalik.html">AnalyticalIK</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_analyticalik.html#pynimation.anim.tools.analytical_ik.AnalyticalIK"><code class="docutils literal notranslate"><span class="pre">AnalyticalIK</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_analyticalik.html#pynimation.anim.tools.analytical_ik.AnalyticalIK.defaultSettings"><code class="docutils literal notranslate"><span class="pre">AnalyticalIK.defaultSettings</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_analyticalik.html#pynimation.anim.tools.analytical_ik.AnalyticalIK.solve"><code class="docutils literal notranslate"><span class="pre">AnalyticalIK.solve()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_animatable.html">Animatable</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_animatable.html#pynimation.viewer.animatable.Animatable"><code class="docutils literal notranslate"><span class="pre">Animatable</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_animatable.html#pynimation.viewer.animatable.Animatable.animate"><code class="docutils literal notranslate"><span class="pre">Animatable.animate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_animated.html">Animated</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_animated.html#pynimation.viewer.animated.Animated"><code class="docutils literal notranslate"><span class="pre">Animated</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_animated.html#pynimation.viewer.animated.Animated.animate"><code class="docutils literal notranslate"><span class="pre">Animated.animate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_animation.html">Animation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_animation.html#pynimation.anim.animation.Animation"><code class="docutils literal notranslate"><span class="pre">Animation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_animation.html#pynimation.anim.animation.Animation.framerate"><code class="docutils literal notranslate"><span class="pre">Animation.framerate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_animation.html#pynimation.anim.animation.Animation.skeleton"><code class="docutils literal notranslate"><span class="pre">Animation.skeleton</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_animation.html#pynimation.anim.animation.Animation.frames"><code class="docutils literal notranslate"><span class="pre">Animation.frames</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_animation.html#pynimation.anim.animation.Animation.addFrame"><code class="docutils literal notranslate"><span class="pre">Animation.addFrame()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_animation.html#pynimation.anim.animation.Animation.copy"><code class="docutils literal notranslate"><span class="pre">Animation.copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_animation.html#pynimation.anim.animation.Animation.createRootProjectionProxy"><code class="docutils literal notranslate"><span class="pre">Animation.createRootProjectionProxy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_animation.html#pynimation.anim.animation.Animation.destroyProxyBone"><code class="docutils literal notranslate"><span class="pre">Animation.destroyProxyBone()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_animation.html#pynimation.anim.animation.Animation.getCycleOffset"><code class="docutils literal notranslate"><span class="pre">Animation.getCycleOffset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_animation.html#pynimation.anim.animation.Animation.getDuration"><code class="docutils literal notranslate"><span class="pre">Animation.getDuration()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_animation.html#pynimation.anim.animation.Animation.getFrameFromTime"><code class="docutils literal notranslate"><span class="pre">Animation.getFrameFromTime()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_animation.html#pynimation.anim.animation.Animation.getFrameNumber"><code class="docutils literal notranslate"><span class="pre">Animation.getFrameNumber()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_animation.html#pynimation.anim.animation.Animation.getFrameXZOffset"><code class="docutils literal notranslate"><span class="pre">Animation.getFrameXZOffset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_animation.html#pynimation.anim.animation.Animation.getJointTrajectory"><code class="docutils literal notranslate"><span class="pre">Animation.getJointTrajectory()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_animation.html#pynimation.anim.animation.Animation.getXZOffset"><code class="docutils literal notranslate"><span class="pre">Animation.getXZOffset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_animation.html#pynimation.anim.animation.Animation.isCyclic"><code class="docutils literal notranslate"><span class="pre">Animation.isCyclic()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_animation.html#pynimation.anim.animation.Animation.setAbsoluteRootGlobalTransform"><code class="docutils literal notranslate"><span class="pre">Animation.setAbsoluteRootGlobalTransform()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_animation.html#pynimation.anim.animation.Animation.setFrame"><code class="docutils literal notranslate"><span class="pre">Animation.setFrame()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_animation.html#pynimation.anim.animation.Animation.setFramerate"><code class="docutils literal notranslate"><span class="pre">Animation.setFramerate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_animation.html#pynimation.anim.animation.Animation.setOriginRootXZPosition"><code class="docutils literal notranslate"><span class="pre">Animation.setOriginRootXZPosition()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_animation.html#pynimation.anim.animation.Animation.setRelativeRootGlobalTransform"><code class="docutils literal notranslate"><span class="pre">Animation.setRelativeRootGlobalTransform()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_arrow.html">Arrow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_arrow.html#pynimation.viewer.objects.arrow.Arrow"><code class="docutils literal notranslate"><span class="pre">Arrow</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_arrow.html#pynimation.viewer.objects.arrow.Arrow.radiusBaseProp"><code class="docutils literal notranslate"><span class="pre">Arrow.radiusBaseProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_arrow.html#pynimation.viewer.objects.arrow.Arrow.radiusPointerProp"><code class="docutils literal notranslate"><span class="pre">Arrow.radiusPointerProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_arrow.html#pynimation.viewer.objects.arrow.Arrow.lengthBaseProp"><code class="docutils literal notranslate"><span class="pre">Arrow.lengthBaseProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_arrow.html#pynimation.viewer.objects.arrow.Arrow.lengthPointerProp"><code class="docutils literal notranslate"><span class="pre">Arrow.lengthPointerProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_arrow.html#pynimation.viewer.objects.arrow.Arrow.color"><code class="docutils literal notranslate"><span class="pre">Arrow.color</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_arrow.html#pynimation.viewer.objects.arrow.Arrow.phong"><code class="docutils literal notranslate"><span class="pre">Arrow.phong</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_arrow.html#pynimation.viewer.objects.arrow.Arrow.pointAt"><code class="docutils literal notranslate"><span class="pre">Arrow.pointAt</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_arrow.html#pynimation.viewer.objects.arrow.Arrow.length"><code class="docutils literal notranslate"><span class="pre">Arrow.length</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_arrow.html#pynimation.viewer.objects.arrow.Arrow.radius"><code class="docutils literal notranslate"><span class="pre">Arrow.radius</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_arrow.html#pynimation.viewer.objects.arrow.Arrow.addChild"><code class="docutils literal notranslate"><span class="pre">Arrow.addChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_arrow.html#pynimation.viewer.objects.arrow.Arrow.alignToDirection"><code class="docutils literal notranslate"><span class="pre">Arrow.alignToDirection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_arrow.html#pynimation.viewer.objects.arrow.Arrow.children"><code class="docutils literal notranslate"><span class="pre">Arrow.children</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_arrow.html#pynimation.viewer.objects.arrow.Arrow.descendants"><code class="docutils literal notranslate"><span class="pre">Arrow.descendants()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_arrow.html#pynimation.viewer.objects.arrow.Arrow.display"><code class="docutils literal notranslate"><span class="pre">Arrow.display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_arrow.html#pynimation.viewer.objects.arrow.Arrow.fromDict"><code class="docutils literal notranslate"><span class="pre">Arrow.fromDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_arrow.html#pynimation.viewer.objects.arrow.Arrow.globalTransform"><code class="docutils literal notranslate"><span class="pre">Arrow.globalTransform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_arrow.html#pynimation.viewer.objects.arrow.Arrow.notify"><code class="docutils literal notranslate"><span class="pre">Arrow.notify()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_arrow.html#pynimation.viewer.objects.arrow.Arrow.parent"><code class="docutils literal notranslate"><span class="pre">Arrow.parent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_arrow.html#id0"><code class="docutils literal notranslate"><span class="pre">Arrow.pointAt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_arrow.html#pynimation.viewer.objects.arrow.Arrow.removeChild"><code class="docutils literal notranslate"><span class="pre">Arrow.removeChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_arrow.html#pynimation.viewer.objects.arrow.Arrow.setPosition"><code class="docutils literal notranslate"><span class="pre">Arrow.setPosition()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_arrow.html#pynimation.viewer.objects.arrow.Arrow.toDict"><code class="docutils literal notranslate"><span class="pre">Arrow.toDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_arrow.html#pynimation.viewer.objects.arrow.Arrow.transform"><code class="docutils literal notranslate"><span class="pre">Arrow.transform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_arrow.html#pynimation.viewer.objects.arrow.Arrow.translate"><code class="docutils literal notranslate"><span class="pre">Arrow.translate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_arrow.html#pynimation.viewer.objects.arrow.Arrow.update"><code class="docutils literal notranslate"><span class="pre">Arrow.update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_arrow.html#pynimation.viewer.objects.arrow.Arrow.updateRecursive"><code class="docutils literal notranslate"><span class="pre">Arrow.updateRecursive()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_arrow.html#pynimation.viewer.objects.arrow.Arrow.valid"><code class="docutils literal notranslate"><span class="pre">Arrow.valid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_binaryreader.html">BinaryReader</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_binaryreader.html#pynimation.io.binaryreader.BinaryReader"><code class="docutils literal notranslate"><span class="pre">BinaryReader</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_binaryreader.html#pynimation.io.binaryreader.BinaryReader.file"><code class="docutils literal notranslate"><span class="pre">BinaryReader.file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_binaryreader.html#pynimation.io.binaryreader.BinaryReader.readBool"><code class="docutils literal notranslate"><span class="pre">BinaryReader.readBool()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_binaryreader.html#pynimation.io.binaryreader.BinaryReader.readFloat"><code class="docutils literal notranslate"><span class="pre">BinaryReader.readFloat()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_binaryreader.html#pynimation.io.binaryreader.BinaryReader.readInt"><code class="docutils literal notranslate"><span class="pre">BinaryReader.readInt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_binaryreader.html#pynimation.io.binaryreader.BinaryReader.readShortInt"><code class="docutils literal notranslate"><span class="pre">BinaryReader.readShortInt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_binaryreader.html#pynimation.io.binaryreader.BinaryReader.readString"><code class="docutils literal notranslate"><span class="pre">BinaryReader.readString()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_binaryreader.html#pynimation.io.binaryreader.BinaryReader.readUnsignedShortInt"><code class="docutils literal notranslate"><span class="pre">BinaryReader.readUnsignedShortInt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_binaryreader.html#pynimation.io.binaryreader.BinaryReader.readVector"><code class="docutils literal notranslate"><span class="pre">BinaryReader.readVector()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_binarywriter.html">BinaryWriter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_binarywriter.html#pynimation.io.binarywriter.BinaryWriter"><code class="docutils literal notranslate"><span class="pre">BinaryWriter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_binarywriter.html#pynimation.io.binarywriter.BinaryWriter.file"><code class="docutils literal notranslate"><span class="pre">BinaryWriter.file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_binarywriter.html#pynimation.io.binarywriter.BinaryWriter.writeBool"><code class="docutils literal notranslate"><span class="pre">BinaryWriter.writeBool()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_binarywriter.html#pynimation.io.binarywriter.BinaryWriter.writeFloat"><code class="docutils literal notranslate"><span class="pre">BinaryWriter.writeFloat()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_binarywriter.html#pynimation.io.binarywriter.BinaryWriter.writeInt"><code class="docutils literal notranslate"><span class="pre">BinaryWriter.writeInt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_binarywriter.html#pynimation.io.binarywriter.BinaryWriter.writeShortInt"><code class="docutils literal notranslate"><span class="pre">BinaryWriter.writeShortInt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_binarywriter.html#pynimation.io.binarywriter.BinaryWriter.writeString"><code class="docutils literal notranslate"><span class="pre">BinaryWriter.writeString()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_binarywriter.html#pynimation.io.binarywriter.BinaryWriter.writeUnsignedShortInt"><code class="docutils literal notranslate"><span class="pre">BinaryWriter.writeUnsignedShortInt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_binarywriter.html#pynimation.io.binarywriter.BinaryWriter.writeVector"><code class="docutils literal notranslate"><span class="pre">BinaryWriter.writeVector()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_binding.html">Binding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_binding.html#pynimation.viewer.events.Binding"><code class="docutils literal notranslate"><span class="pre">Binding</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_binding.html#pynimation.viewer.events.Binding.event"><code class="docutils literal notranslate"><span class="pre">Binding.event</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_binding.html#pynimation.viewer.events.Binding.handlers"><code class="docutils literal notranslate"><span class="pre">Binding.handlers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_binding.html#pynimation.viewer.events.Binding.description"><code class="docutils literal notranslate"><span class="pre">Binding.description</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_bvhimporter.html">BVHImporter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_bvhimporter.html#pynimation.io.bvh.importer.BVHImporter"><code class="docutils literal notranslate"><span class="pre">BVHImporter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_bvhimporter.html#pynimation.io.bvh.importer.BVHImporter.clear"><code class="docutils literal notranslate"><span class="pre">BVHImporter.clear()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_bvhimporter.html#pynimation.io.bvh.importer.BVHImporter.extension"><code class="docutils literal notranslate"><span class="pre">BVHImporter.extension</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_bvhimporter.html#pynimation.io.bvh.importer.BVHImporter.load"><code class="docutils literal notranslate"><span class="pre">BVHImporter.load()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_bvhimporter.html#pynimation.io.bvh.importer.BVHImporter.parseFrame"><code class="docutils literal notranslate"><span class="pre">BVHImporter.parseFrame()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_callableloop.html">CallableLoop</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_callableloop.html#pynimation.viewer.loop.CallableLoop"><code class="docutils literal notranslate"><span class="pre">CallableLoop</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_callableloop.html#pynimation.viewer.loop.CallableLoop.afterDisplay"><code class="docutils literal notranslate"><span class="pre">CallableLoop.afterDisplay()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_callableloop.html#pynimation.viewer.loop.CallableLoop.beforeDisplay"><code class="docutils literal notranslate"><span class="pre">CallableLoop.beforeDisplay()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_callableloop.html#pynimation.viewer.loop.CallableLoop.getPriority"><code class="docutils literal notranslate"><span class="pre">CallableLoop.getPriority()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_callableloop.html#pynimation.viewer.loop.CallableLoop.setPriority"><code class="docutils literal notranslate"><span class="pre">CallableLoop.setPriority()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_camera.html">Camera</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_camera.html#pynimation.viewer.camera.Camera"><code class="docutils literal notranslate"><span class="pre">Camera</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_camera.html#pynimation.viewer.camera.Camera.computeProjectionMatrix"><code class="docutils literal notranslate"><span class="pre">Camera.computeProjectionMatrix()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_camera.html#pynimation.viewer.camera.Camera.rotatePitch"><code class="docutils literal notranslate"><span class="pre">Camera.rotatePitch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_camera.html#pynimation.viewer.camera.Camera.rotateYaw"><code class="docutils literal notranslate"><span class="pre">Camera.rotateYaw()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_camera.html#pynimation.viewer.camera.Camera.translate"><code class="docutils literal notranslate"><span class="pre">Camera.translate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_capsule.html">Capsule</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule"><code class="docutils literal notranslate"><span class="pre">Capsule</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.jointID"><code class="docutils literal notranslate"><span class="pre">Capsule.jointID</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.defaultRotation"><code class="docutils literal notranslate"><span class="pre">Capsule.defaultRotation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.length"><code class="docutils literal notranslate"><span class="pre">Capsule.length</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.radius"><code class="docutils literal notranslate"><span class="pre">Capsule.radius</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.numberSegments"><code class="docutils literal notranslate"><span class="pre">Capsule.numberSegments</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.addChild"><code class="docutils literal notranslate"><span class="pre">Capsule.addChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.automaticallyLinkShaderUniforms"><code class="docutils literal notranslate"><span class="pre">Capsule.automaticallyLinkShaderUniforms()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.children"><code class="docutils literal notranslate"><span class="pre">Capsule.children</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.computeNormals"><code class="docutils literal notranslate"><span class="pre">Capsule.computeNormals()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.createFaceIndexes"><code class="docutils literal notranslate"><span class="pre">Capsule.createFaceIndexes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.descendants"><code class="docutils literal notranslate"><span class="pre">Capsule.descendants()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.display"><code class="docutils literal notranslate"><span class="pre">Capsule.display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.drawBuffers"><code class="docutils literal notranslate"><span class="pre">Capsule.drawBuffers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.fromDict"><code class="docutils literal notranslate"><span class="pre">Capsule.fromDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.globalTransform"><code class="docutils literal notranslate"><span class="pre">Capsule.globalTransform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.linkShaderData"><code class="docutils literal notranslate"><span class="pre">Capsule.linkShaderData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.linkShaderTextureData"><code class="docutils literal notranslate"><span class="pre">Capsule.linkShaderTextureData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.linkShaderUniforms"><code class="docutils literal notranslate"><span class="pre">Capsule.linkShaderUniforms()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.notify"><code class="docutils literal notranslate"><span class="pre">Capsule.notify()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.parent"><code class="docutils literal notranslate"><span class="pre">Capsule.parent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.removeChild"><code class="docutils literal notranslate"><span class="pre">Capsule.removeChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.setShaderData"><code class="docutils literal notranslate"><span class="pre">Capsule.setShaderData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.setUndefinedShaderData"><code class="docutils literal notranslate"><span class="pre">Capsule.setUndefinedShaderData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.toDict"><code class="docutils literal notranslate"><span class="pre">Capsule.toDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.transform"><code class="docutils literal notranslate"><span class="pre">Capsule.transform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.update"><code class="docutils literal notranslate"><span class="pre">Capsule.update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.updateRecursive"><code class="docutils literal notranslate"><span class="pre">Capsule.updateRecursive()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_capsule.html#pynimation.viewer.objects.capsule.Capsule.valid"><code class="docutils literal notranslate"><span class="pre">Capsule.valid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_character.html">Character</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_character.html#pynimation.viewer.character.Character"><code class="docutils literal notranslate"><span class="pre">Character</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_character.html#pynimation.viewer.character.Character.animation"><code class="docutils literal notranslate"><span class="pre">Character.animation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_character.html#pynimation.viewer.character.Character.meshes"><code class="docutils literal notranslate"><span class="pre">Character.meshes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_character.html#pynimation.viewer.character.Character.addChild"><code class="docutils literal notranslate"><span class="pre">Character.addChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_character.html#pynimation.viewer.character.Character.animate"><code class="docutils literal notranslate"><span class="pre">Character.animate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_character.html#pynimation.viewer.character.Character.children"><code class="docutils literal notranslate"><span class="pre">Character.children</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_character.html#pynimation.viewer.character.Character.descendants"><code class="docutils literal notranslate"><span class="pre">Character.descendants()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_character.html#pynimation.viewer.character.Character.display"><code class="docutils literal notranslate"><span class="pre">Character.display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_character.html#pynimation.viewer.character.Character.fromDict"><code class="docutils literal notranslate"><span class="pre">Character.fromDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_character.html#pynimation.viewer.character.Character.globalTransform"><code class="docutils literal notranslate"><span class="pre">Character.globalTransform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_character.html#pynimation.viewer.character.Character.notify"><code class="docutils literal notranslate"><span class="pre">Character.notify()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_character.html#pynimation.viewer.character.Character.parent"><code class="docutils literal notranslate"><span class="pre">Character.parent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_character.html#pynimation.viewer.character.Character.removeChild"><code class="docutils literal notranslate"><span class="pre">Character.removeChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_character.html#pynimation.viewer.character.Character.toDict"><code class="docutils literal notranslate"><span class="pre">Character.toDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_character.html#pynimation.viewer.character.Character.transform"><code class="docutils literal notranslate"><span class="pre">Character.transform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_character.html#pynimation.viewer.character.Character.update"><code class="docutils literal notranslate"><span class="pre">Character.update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_character.html#pynimation.viewer.character.Character.updateRecursive"><code class="docutils literal notranslate"><span class="pre">Character.updateRecursive()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_character.html#pynimation.viewer.character.Character.valid"><code class="docutils literal notranslate"><span class="pre">Character.valid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_cube.html">Cube</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_cube.html#pynimation.viewer.objects.cube.Cube"><code class="docutils literal notranslate"><span class="pre">Cube</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_cube.html#pynimation.viewer.objects.cube.Cube.width"><code class="docutils literal notranslate"><span class="pre">Cube.width</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cube.html#pynimation.viewer.objects.cube.Cube.addChild"><code class="docutils literal notranslate"><span class="pre">Cube.addChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cube.html#pynimation.viewer.objects.cube.Cube.automaticallyLinkShaderUniforms"><code class="docutils literal notranslate"><span class="pre">Cube.automaticallyLinkShaderUniforms()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cube.html#pynimation.viewer.objects.cube.Cube.children"><code class="docutils literal notranslate"><span class="pre">Cube.children</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cube.html#pynimation.viewer.objects.cube.Cube.computeNormals"><code class="docutils literal notranslate"><span class="pre">Cube.computeNormals()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cube.html#pynimation.viewer.objects.cube.Cube.createFaceIndexes"><code class="docutils literal notranslate"><span class="pre">Cube.createFaceIndexes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cube.html#pynimation.viewer.objects.cube.Cube.descendants"><code class="docutils literal notranslate"><span class="pre">Cube.descendants()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cube.html#pynimation.viewer.objects.cube.Cube.display"><code class="docutils literal notranslate"><span class="pre">Cube.display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cube.html#pynimation.viewer.objects.cube.Cube.drawBuffers"><code class="docutils literal notranslate"><span class="pre">Cube.drawBuffers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cube.html#pynimation.viewer.objects.cube.Cube.fromDict"><code class="docutils literal notranslate"><span class="pre">Cube.fromDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cube.html#pynimation.viewer.objects.cube.Cube.globalTransform"><code class="docutils literal notranslate"><span class="pre">Cube.globalTransform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cube.html#pynimation.viewer.objects.cube.Cube.linkShaderData"><code class="docutils literal notranslate"><span class="pre">Cube.linkShaderData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cube.html#pynimation.viewer.objects.cube.Cube.linkShaderTextureData"><code class="docutils literal notranslate"><span class="pre">Cube.linkShaderTextureData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cube.html#pynimation.viewer.objects.cube.Cube.linkShaderUniforms"><code class="docutils literal notranslate"><span class="pre">Cube.linkShaderUniforms()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cube.html#pynimation.viewer.objects.cube.Cube.notify"><code class="docutils literal notranslate"><span class="pre">Cube.notify()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cube.html#pynimation.viewer.objects.cube.Cube.parent"><code class="docutils literal notranslate"><span class="pre">Cube.parent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cube.html#pynimation.viewer.objects.cube.Cube.removeChild"><code class="docutils literal notranslate"><span class="pre">Cube.removeChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cube.html#pynimation.viewer.objects.cube.Cube.setShaderData"><code class="docutils literal notranslate"><span class="pre">Cube.setShaderData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cube.html#pynimation.viewer.objects.cube.Cube.setUndefinedShaderData"><code class="docutils literal notranslate"><span class="pre">Cube.setUndefinedShaderData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cube.html#pynimation.viewer.objects.cube.Cube.toDict"><code class="docutils literal notranslate"><span class="pre">Cube.toDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cube.html#pynimation.viewer.objects.cube.Cube.transform"><code class="docutils literal notranslate"><span class="pre">Cube.transform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cube.html#pynimation.viewer.objects.cube.Cube.update"><code class="docutils literal notranslate"><span class="pre">Cube.update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cube.html#pynimation.viewer.objects.cube.Cube.updateRecursive"><code class="docutils literal notranslate"><span class="pre">Cube.updateRecursive()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cube.html#pynimation.viewer.objects.cube.Cube.valid"><code class="docutils literal notranslate"><span class="pre">Cube.valid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_cylinder.html">Cylinder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder"><code class="docutils literal notranslate"><span class="pre">Cylinder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.height"><code class="docutils literal notranslate"><span class="pre">Cylinder.height</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.radiusBase"><code class="docutils literal notranslate"><span class="pre">Cylinder.radiusBase</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.radiusTop"><code class="docutils literal notranslate"><span class="pre">Cylinder.radiusTop</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.numberOfSectors"><code class="docutils literal notranslate"><span class="pre">Cylinder.numberOfSectors</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.numberOfStacks"><code class="docutils literal notranslate"><span class="pre">Cylinder.numberOfStacks</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.center"><code class="docutils literal notranslate"><span class="pre">Cylinder.center</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.color"><code class="docutils literal notranslate"><span class="pre">Cylinder.color</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.height_direction"><code class="docutils literal notranslate"><span class="pre">Cylinder.height_direction</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.phong"><code class="docutils literal notranslate"><span class="pre">Cylinder.phong</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.addChild"><code class="docutils literal notranslate"><span class="pre">Cylinder.addChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.automaticallyLinkShaderUniforms"><code class="docutils literal notranslate"><span class="pre">Cylinder.automaticallyLinkShaderUniforms()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.children"><code class="docutils literal notranslate"><span class="pre">Cylinder.children</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.computeNormals"><code class="docutils literal notranslate"><span class="pre">Cylinder.computeNormals()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.createFaceIndexes"><code class="docutils literal notranslate"><span class="pre">Cylinder.createFaceIndexes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.descendants"><code class="docutils literal notranslate"><span class="pre">Cylinder.descendants()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.display"><code class="docutils literal notranslate"><span class="pre">Cylinder.display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.drawBuffers"><code class="docutils literal notranslate"><span class="pre">Cylinder.drawBuffers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.fromDict"><code class="docutils literal notranslate"><span class="pre">Cylinder.fromDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.globalTransform"><code class="docutils literal notranslate"><span class="pre">Cylinder.globalTransform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.linkShaderData"><code class="docutils literal notranslate"><span class="pre">Cylinder.linkShaderData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.linkShaderTextureData"><code class="docutils literal notranslate"><span class="pre">Cylinder.linkShaderTextureData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.linkShaderUniforms"><code class="docutils literal notranslate"><span class="pre">Cylinder.linkShaderUniforms()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.notify"><code class="docutils literal notranslate"><span class="pre">Cylinder.notify()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.parent"><code class="docutils literal notranslate"><span class="pre">Cylinder.parent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.removeChild"><code class="docutils literal notranslate"><span class="pre">Cylinder.removeChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.setShaderData"><code class="docutils literal notranslate"><span class="pre">Cylinder.setShaderData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.setUndefinedShaderData"><code class="docutils literal notranslate"><span class="pre">Cylinder.setUndefinedShaderData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.toDict"><code class="docutils literal notranslate"><span class="pre">Cylinder.toDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.transform"><code class="docutils literal notranslate"><span class="pre">Cylinder.transform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.update"><code class="docutils literal notranslate"><span class="pre">Cylinder.update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.updateRecursive"><code class="docutils literal notranslate"><span class="pre">Cylinder.updateRecursive()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_cylinder.html#pynimation.viewer.objects.cylinder.Cylinder.valid"><code class="docutils literal notranslate"><span class="pre">Cylinder.valid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_displayable.html">Displayable</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_displayable.html#pynimation.viewer.displayable.Displayable"><code class="docutils literal notranslate"><span class="pre">Displayable</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_displayable.html#pynimation.viewer.displayable.Displayable.display"><code class="docutils literal notranslate"><span class="pre">Displayable.display()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_eventmanager.html">EventManager</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_eventmanager.html#pynimation.viewer.events.EventManager"><code class="docutils literal notranslate"><span class="pre">EventManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_eventmanager.html#pynimation.viewer.events.EventManager.bind"><code class="docutils literal notranslate"><span class="pre">EventManager.bind()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_eventmanager.html#pynimation.viewer.events.EventManager.bindPartial"><code class="docutils literal notranslate"><span class="pre">EventManager.bindPartial()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_eventmanager.html#pynimation.viewer.events.EventManager.bindings"><code class="docutils literal notranslate"><span class="pre">EventManager.bindings</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_eventmanager.html#pynimation.viewer.events.EventManager.rebind"><code class="docutils literal notranslate"><span class="pre">EventManager.rebind()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_eventmanager.html#pynimation.viewer.events.EventManager.unbind"><code class="docutils literal notranslate"><span class="pre">EventManager.unbind()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_eventmanager.html#pynimation.viewer.events.EventManager.update"><code class="docutils literal notranslate"><span class="pre">EventManager.update()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_exporter.html">Exporter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_exporter.html#pynimation.io.exporter.Exporter"><code class="docutils literal notranslate"><span class="pre">Exporter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_exporter.html#pynimation.io.exporter.Exporter.extension"><code class="docutils literal notranslate"><span class="pre">Exporter.extension</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_exporter.html#pynimation.io.exporter.Exporter.save"><code class="docutils literal notranslate"><span class="pre">Exporter.save()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_fbxexporter.html">FBXExporter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_fbxexporter.html#pynimation.io.fbx.exporter.FBXExporter"><code class="docutils literal notranslate"><span class="pre">FBXExporter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_fbxexporter.html#pynimation.io.fbx.exporter.FBXExporter.settings"><code class="docutils literal notranslate"><span class="pre">FBXExporter.settings</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_fbxexporter.html#pynimation.io.fbx.exporter.FBXExporter.extension"><code class="docutils literal notranslate"><span class="pre">FBXExporter.extension</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_fbxexporter.html#pynimation.io.fbx.exporter.FBXExporter.save"><code class="docutils literal notranslate"><span class="pre">FBXExporter.save()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_fbxexportersettings.html">FBXExporterSettings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_fbxexportersettings.html#pynimation.io.fbx.exporter.FBXExporterSettings"><code class="docutils literal notranslate"><span class="pre">FBXExporterSettings</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_fbximporter.html">FBXImporter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_fbximporter.html#pynimation.io.fbx.importer.FBXImporter"><code class="docutils literal notranslate"><span class="pre">FBXImporter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_fbximporter.html#pynimation.io.fbx.importer.FBXImporter.extension"><code class="docutils literal notranslate"><span class="pre">FBXImporter.extension</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_fbximporter.html#pynimation.io.fbx.importer.FBXImporter.load"><code class="docutils literal notranslate"><span class="pre">FBXImporter.load()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_fbxmesh.html">FBXMesh</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_fbxmesh.html#pynimation.viewer.io.fbx.mesh.FBXMesh"><code class="docutils literal notranslate"><span class="pre">FBXMesh</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_fbxmesh.html#pynimation.viewer.io.fbx.mesh.FBXMesh.addChild"><code class="docutils literal notranslate"><span class="pre">FBXMesh.addChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_fbxmesh.html#pynimation.viewer.io.fbx.mesh.FBXMesh.animate"><code class="docutils literal notranslate"><span class="pre">FBXMesh.animate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_fbxmesh.html#pynimation.viewer.io.fbx.mesh.FBXMesh.children"><code class="docutils literal notranslate"><span class="pre">FBXMesh.children</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_fbxmesh.html#pynimation.viewer.io.fbx.mesh.FBXMesh.descendants"><code class="docutils literal notranslate"><span class="pre">FBXMesh.descendants()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_fbxmesh.html#pynimation.viewer.io.fbx.mesh.FBXMesh.display"><code class="docutils literal notranslate"><span class="pre">FBXMesh.display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_fbxmesh.html#pynimation.viewer.io.fbx.mesh.FBXMesh.fromDict"><code class="docutils literal notranslate"><span class="pre">FBXMesh.fromDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_fbxmesh.html#pynimation.viewer.io.fbx.mesh.FBXMesh.globalTransform"><code class="docutils literal notranslate"><span class="pre">FBXMesh.globalTransform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_fbxmesh.html#pynimation.viewer.io.fbx.mesh.FBXMesh.notify"><code class="docutils literal notranslate"><span class="pre">FBXMesh.notify()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_fbxmesh.html#pynimation.viewer.io.fbx.mesh.FBXMesh.parent"><code class="docutils literal notranslate"><span class="pre">FBXMesh.parent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_fbxmesh.html#pynimation.viewer.io.fbx.mesh.FBXMesh.removeChild"><code class="docutils literal notranslate"><span class="pre">FBXMesh.removeChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_fbxmesh.html#pynimation.viewer.io.fbx.mesh.FBXMesh.toDict"><code class="docutils literal notranslate"><span class="pre">FBXMesh.toDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_fbxmesh.html#pynimation.viewer.io.fbx.mesh.FBXMesh.transform"><code class="docutils literal notranslate"><span class="pre">FBXMesh.transform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_fbxmesh.html#pynimation.viewer.io.fbx.mesh.FBXMesh.update"><code class="docutils literal notranslate"><span class="pre">FBXMesh.update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_fbxmesh.html#pynimation.viewer.io.fbx.mesh.FBXMesh.updateRecursive"><code class="docutils literal notranslate"><span class="pre">FBXMesh.updateRecursive()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_fbxmesh.html#pynimation.viewer.io.fbx.mesh.FBXMesh.valid"><code class="docutils literal notranslate"><span class="pre">FBXMesh.valid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_fbxmeshimporter.html">FBXMeshImporter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_fbxmeshimporter.html#pynimation.viewer.io.fbx.mesh_importer.FBXMeshImporter"><code class="docutils literal notranslate"><span class="pre">FBXMeshImporter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_fbxmeshimporter.html#pynimation.viewer.io.fbx.mesh_importer.FBXMeshImporter.animations"><code class="docutils literal notranslate"><span class="pre">FBXMeshImporter.animations</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_fbxmeshimporter.html#pynimation.viewer.io.fbx.mesh_importer.FBXMeshImporter.extension"><code class="docutils literal notranslate"><span class="pre">FBXMeshImporter.extension</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_fbxmeshimporter.html#pynimation.viewer.io.fbx.mesh_importer.FBXMeshImporter.load"><code class="docutils literal notranslate"><span class="pre">FBXMeshImporter.load()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_fbxmeshimporter.html#pynimation.viewer.io.fbx.mesh_importer.FBXMeshImporter.loadMeshes"><code class="docutils literal notranslate"><span class="pre">FBXMeshImporter.loadMeshes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_fbxmeshimporter.html#pynimation.viewer.io.fbx.mesh_importer.FBXMeshImporter.skeletonObjects"><code class="docutils literal notranslate"><span class="pre">FBXMeshImporter.skeletonObjects</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_frame.html">Frame</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_frame.html#pynimation.anim.frame.Frame"><code class="docutils literal notranslate"><span class="pre">Frame</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_frame.html#pynimation.anim.frame.Frame.skeleton"><code class="docutils literal notranslate"><span class="pre">Frame.skeleton</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_frame.html#pynimation.anim.frame.Frame.nbJoints"><code class="docutils literal notranslate"><span class="pre">Frame.nbJoints</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_frame.html#pynimation.anim.frame.Frame.copy"><code class="docutils literal notranslate"><span class="pre">Frame.copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_frame.html#pynimation.anim.frame.Frame.getBoneGlobalPosition"><code class="docutils literal notranslate"><span class="pre">Frame.getBoneGlobalPosition()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_frame.html#pynimation.anim.frame.Frame.getBoneGlobalTransform"><code class="docutils literal notranslate"><span class="pre">Frame.getBoneGlobalTransform()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_frame.html#pynimation.anim.frame.Frame.getBoneLocalTransform"><code class="docutils literal notranslate"><span class="pre">Frame.getBoneLocalTransform()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_frame.html#pynimation.anim.frame.Frame.getRootPosition"><code class="docutils literal notranslate"><span class="pre">Frame.getRootPosition()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_frame.html#pynimation.anim.frame.Frame.globalTransforms"><code class="docutils literal notranslate"><span class="pre">Frame.globalTransforms</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_frame.html#pynimation.anim.frame.Frame.interpolate"><code class="docutils literal notranslate"><span class="pre">Frame.interpolate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_frame.html#pynimation.anim.frame.Frame.localTransforms"><code class="docutils literal notranslate"><span class="pre">Frame.localTransforms</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_frame.html#pynimation.anim.frame.Frame.notify"><code class="docutils literal notranslate"><span class="pre">Frame.notify()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_frame.html#pynimation.anim.frame.Frame.setBoneLocalRotation"><code class="docutils literal notranslate"><span class="pre">Frame.setBoneLocalRotation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_frame.html#pynimation.anim.frame.Frame.setBoneLocalRotationEuler"><code class="docutils literal notranslate"><span class="pre">Frame.setBoneLocalRotationEuler()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_frame.html#pynimation.anim.frame.Frame.setBonePosition"><code class="docutils literal notranslate"><span class="pre">Frame.setBonePosition()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_frame.html#pynimation.anim.frame.Frame.update"><code class="docutils literal notranslate"><span class="pre">Frame.update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_frame.html#pynimation.anim.frame.Frame.updateRecursive"><code class="docutils literal notranslate"><span class="pre">Frame.updateRecursive()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_graph.html">Graph</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_graph.html#pynimation.common.graph.Graph"><code class="docutils literal notranslate"><span class="pre">Graph</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_graph.html#pynimation.common.graph.Graph.add"><code class="docutils literal notranslate"><span class="pre">Graph.add()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_graph.html#pynimation.common.graph.Graph.fromDict"><code class="docutils literal notranslate"><span class="pre">Graph.fromDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_graph.html#pynimation.common.graph.Graph.getNode"><code class="docutils literal notranslate"><span class="pre">Graph.getNode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_graph.html#pynimation.common.graph.Graph.hasSameTopology"><code class="docutils literal notranslate"><span class="pre">Graph.hasSameTopology()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_graph.html#pynimation.common.graph.Graph.nodes"><code class="docutils literal notranslate"><span class="pre">Graph.nodes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_graph.html#pynimation.common.graph.Graph.remove"><code class="docutils literal notranslate"><span class="pre">Graph.remove()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_graph.html#pynimation.common.graph.Graph.root"><code class="docutils literal notranslate"><span class="pre">Graph.root</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_graph.html#pynimation.common.graph.Graph.toDict"><code class="docutils literal notranslate"><span class="pre">Graph.toDict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_ik.html">IK</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_ik.html#pynimation.anim.tools.ik.IK"><code class="docutils literal notranslate"><span class="pre">IK</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_ik.html#pynimation.anim.tools.ik.IK.solve"><code class="docutils literal notranslate"><span class="pre">IK.solve()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_importer.html">Importer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_importer.html#pynimation.io.importer.Importer"><code class="docutils literal notranslate"><span class="pre">Importer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_importer.html#pynimation.io.importer.Importer.extension"><code class="docutils literal notranslate"><span class="pre">Importer.extension</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_importer.html#pynimation.io.importer.Importer.load"><code class="docutils literal notranslate"><span class="pre">Importer.load()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_joint.html">Joint</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_joint.html#pynimation.anim.joint.Joint"><code class="docutils literal notranslate"><span class="pre">Joint</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_joint.html#pynimation.anim.joint.Joint.addChild"><code class="docutils literal notranslate"><span class="pre">Joint.addChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_joint.html#pynimation.anim.joint.Joint.children"><code class="docutils literal notranslate"><span class="pre">Joint.children</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_joint.html#pynimation.anim.joint.Joint.descendants"><code class="docutils literal notranslate"><span class="pre">Joint.descendants()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_joint.html#pynimation.anim.joint.Joint.fromDict"><code class="docutils literal notranslate"><span class="pre">Joint.fromDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_joint.html#pynimation.anim.joint.Joint.getInverseBindMatrix"><code class="docutils literal notranslate"><span class="pre">Joint.getInverseBindMatrix()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_joint.html#pynimation.anim.joint.Joint.globalTransform"><code class="docutils literal notranslate"><span class="pre">Joint.globalTransform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_joint.html#pynimation.anim.joint.Joint.id"><code class="docutils literal notranslate"><span class="pre">Joint.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_joint.html#pynimation.anim.joint.Joint.notify"><code class="docutils literal notranslate"><span class="pre">Joint.notify()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_joint.html#pynimation.anim.joint.Joint.parent"><code class="docutils literal notranslate"><span class="pre">Joint.parent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_joint.html#pynimation.anim.joint.Joint.removeChild"><code class="docutils literal notranslate"><span class="pre">Joint.removeChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_joint.html#pynimation.anim.joint.Joint.skeleton"><code class="docutils literal notranslate"><span class="pre">Joint.skeleton</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_joint.html#pynimation.anim.joint.Joint.toDict"><code class="docutils literal notranslate"><span class="pre">Joint.toDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_joint.html#pynimation.anim.joint.Joint.transform"><code class="docutils literal notranslate"><span class="pre">Joint.transform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_joint.html#pynimation.anim.joint.Joint.update"><code class="docutils literal notranslate"><span class="pre">Joint.update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_joint.html#pynimation.anim.joint.Joint.updateRecursive"><code class="docutils literal notranslate"><span class="pre">Joint.updateRecursive()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_joint.html#pynimation.anim.joint.Joint.valid"><code class="docutils literal notranslate"><span class="pre">Joint.valid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_lightmanager.html">LightManager</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_lightmanager.html#pynimation.viewer.light.LightManager"><code class="docutils literal notranslate"><span class="pre">LightManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_lightmanager.html#pynimation.viewer.light.LightManager.computeViewAndProjectionMatrices"><code class="docutils literal notranslate"><span class="pre">LightManager.computeViewAndProjectionMatrices()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_localorientationwithoutrootmetric.html">LocalOrientationWithoutRootMetric</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_localorientationwithoutrootmetric.html#pynimation.anim.metrics.local_orientation_no_root.LocalOrientationWithoutRootMetric"><code class="docutils literal notranslate"><span class="pre">LocalOrientationWithoutRootMetric</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_localorientationwithoutrootmetric.html#pynimation.anim.metrics.local_orientation_no_root.LocalOrientationWithoutRootMetric.evaluate"><code class="docutils literal notranslate"><span class="pre">LocalOrientationWithoutRootMetric.evaluate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_localorientationwithoutrootmetric.html#pynimation.anim.metrics.local_orientation_no_root.LocalOrientationWithoutRootMetric.prepareAnimation"><code class="docutils literal notranslate"><span class="pre">LocalOrientationWithoutRootMetric.prepareAnimation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_localorientationwithoutrootmetric.html#pynimation.anim.metrics.local_orientation_no_root.LocalOrientationWithoutRootMetric.prepareFrame"><code class="docutils literal notranslate"><span class="pre">LocalOrientationWithoutRootMetric.prepareFrame()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_meshimporter.html">MeshImporter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_meshimporter.html#pynimation.viewer.io.mesh_importer.MeshImporter"><code class="docutils literal notranslate"><span class="pre">MeshImporter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_meshimporter.html#pynimation.viewer.io.mesh_importer.MeshImporter.extension"><code class="docutils literal notranslate"><span class="pre">MeshImporter.extension</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_meshimporter.html#pynimation.viewer.io.mesh_importer.MeshImporter.loadMeshes"><code class="docutils literal notranslate"><span class="pre">MeshImporter.loadMeshes()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_metric.html">Metric</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_metric.html#pynimation.anim.metrics.metric.Metric"><code class="docutils literal notranslate"><span class="pre">Metric</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_metric.html#pynimation.anim.metrics.metric.Metric.evaluate"><code class="docutils literal notranslate"><span class="pre">Metric.evaluate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_metric.html#pynimation.anim.metrics.metric.Metric.prepareAnimation"><code class="docutils literal notranslate"><span class="pre">Metric.prepareAnimation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_metric.html#pynimation.anim.metrics.metric.Metric.prepareFrame"><code class="docutils literal notranslate"><span class="pre">Metric.prepareFrame()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_motiongraph.html">MotionGraph</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_motiongraph.html#pynimation.anim.motiongraph.motiongraph.MotionGraph"><code class="docutils literal notranslate"><span class="pre">MotionGraph</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_motiongraph.html#pynimation.anim.motiongraph.motiongraph.MotionGraph.metric"><code class="docutils literal notranslate"><span class="pre">MotionGraph.metric</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_motiongraph.html#pynimation.anim.motiongraph.motiongraph.MotionGraph.anims"><code class="docutils literal notranslate"><span class="pre">MotionGraph.anims</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_motiongraph.html#pynimation.anim.motiongraph.motiongraph.MotionGraph.skeletonMap"><code class="docutils literal notranslate"><span class="pre">MotionGraph.skeletonMap</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_motiongraph.html#pynimation.anim.motiongraph.motiongraph.MotionGraph.framerate"><code class="docutils literal notranslate"><span class="pre">MotionGraph.framerate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_motiongraph.html#pynimation.anim.motiongraph.motiongraph.MotionGraph.threshold"><code class="docutils literal notranslate"><span class="pre">MotionGraph.threshold</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_motiongraph.html#pynimation.anim.motiongraph.motiongraph.MotionGraph.nodes"><code class="docutils literal notranslate"><span class="pre">MotionGraph.nodes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_motiongraph.html#pynimation.anim.motiongraph.motiongraph.MotionGraph.MotionGraphNode"><code class="docutils literal notranslate"><span class="pre">MotionGraph.MotionGraphNode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_motiongraph.html#pynimation.anim.motiongraph.motiongraph.MotionGraph.load"><code class="docutils literal notranslate"><span class="pre">MotionGraph.load()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_motiongraph.html#pynimation.anim.motiongraph.motiongraph.MotionGraph.save"><code class="docutils literal notranslate"><span class="pre">MotionGraph.save()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_mvnximporter.html">MVNXImporter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_mvnximporter.html#pynimation.io.mvnx.importer.MVNXImporter"><code class="docutils literal notranslate"><span class="pre">MVNXImporter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_mvnximporter.html#pynimation.io.mvnx.importer.MVNXImporter.extension"><code class="docutils literal notranslate"><span class="pre">MVNXImporter.extension</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_mvnximporter.html#pynimation.io.mvnx.importer.MVNXImporter.load"><code class="docutils literal notranslate"><span class="pre">MVNXImporter.load()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_node.html">Node</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_node.html#pynimation.common.graph.Node"><code class="docutils literal notranslate"><span class="pre">Node</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_node.html#pynimation.common.graph.Node.name"><code class="docutils literal notranslate"><span class="pre">Node.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_node.html#pynimation.common.graph.Node.addChild"><code class="docutils literal notranslate"><span class="pre">Node.addChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_node.html#pynimation.common.graph.Node.children"><code class="docutils literal notranslate"><span class="pre">Node.children</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_node.html#pynimation.common.graph.Node.descendants"><code class="docutils literal notranslate"><span class="pre">Node.descendants()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_node.html#pynimation.common.graph.Node.fromDict"><code class="docutils literal notranslate"><span class="pre">Node.fromDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_node.html#pynimation.common.graph.Node.parent"><code class="docutils literal notranslate"><span class="pre">Node.parent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_node.html#pynimation.common.graph.Node.removeChild"><code class="docutils literal notranslate"><span class="pre">Node.removeChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_node.html#pynimation.common.graph.Node.toDict"><code class="docutils literal notranslate"><span class="pre">Node.toDict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_plane.html">Plane</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane"><code class="docutils literal notranslate"><span class="pre">Plane</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.width"><code class="docutils literal notranslate"><span class="pre">Plane.width</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.height"><code class="docutils literal notranslate"><span class="pre">Plane.height</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.normalDirectionAx"><code class="docutils literal notranslate"><span class="pre">Plane.normalDirectionAx</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.color"><code class="docutils literal notranslate"><span class="pre">Plane.color</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.textureFilename"><code class="docutils literal notranslate"><span class="pre">Plane.textureFilename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.fromFloorPosition"><code class="docutils literal notranslate"><span class="pre">Plane.fromFloorPosition</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.mixParameter"><code class="docutils literal notranslate"><span class="pre">Plane.mixParameter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.addChild"><code class="docutils literal notranslate"><span class="pre">Plane.addChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.automaticallyLinkShaderUniforms"><code class="docutils literal notranslate"><span class="pre">Plane.automaticallyLinkShaderUniforms()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.children"><code class="docutils literal notranslate"><span class="pre">Plane.children</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.computeNormals"><code class="docutils literal notranslate"><span class="pre">Plane.computeNormals()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.createFaceIndexes"><code class="docutils literal notranslate"><span class="pre">Plane.createFaceIndexes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.descendants"><code class="docutils literal notranslate"><span class="pre">Plane.descendants()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.display"><code class="docutils literal notranslate"><span class="pre">Plane.display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.drawBuffers"><code class="docutils literal notranslate"><span class="pre">Plane.drawBuffers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.fromDict"><code class="docutils literal notranslate"><span class="pre">Plane.fromDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.globalTransform"><code class="docutils literal notranslate"><span class="pre">Plane.globalTransform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.linkShaderData"><code class="docutils literal notranslate"><span class="pre">Plane.linkShaderData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.linkShaderTextureData"><code class="docutils literal notranslate"><span class="pre">Plane.linkShaderTextureData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.linkShaderUniforms"><code class="docutils literal notranslate"><span class="pre">Plane.linkShaderUniforms()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.loadTexture"><code class="docutils literal notranslate"><span class="pre">Plane.loadTexture()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.notify"><code class="docutils literal notranslate"><span class="pre">Plane.notify()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.parent"><code class="docutils literal notranslate"><span class="pre">Plane.parent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.removeChild"><code class="docutils literal notranslate"><span class="pre">Plane.removeChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.setColor"><code class="docutils literal notranslate"><span class="pre">Plane.setColor()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.setMixParameter"><code class="docutils literal notranslate"><span class="pre">Plane.setMixParameter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.setShaderData"><code class="docutils literal notranslate"><span class="pre">Plane.setShaderData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.setUndefinedShaderData"><code class="docutils literal notranslate"><span class="pre">Plane.setUndefinedShaderData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.toDict"><code class="docutils literal notranslate"><span class="pre">Plane.toDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.transform"><code class="docutils literal notranslate"><span class="pre">Plane.transform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.update"><code class="docutils literal notranslate"><span class="pre">Plane.update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.updateRecursive"><code class="docutils literal notranslate"><span class="pre">Plane.updateRecursive()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_plane.html#pynimation.viewer.objects.plane.Plane.valid"><code class="docutils literal notranslate"><span class="pre">Plane.valid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_player.html">Player</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_player.html#pynimation.viewer.player.Player"><code class="docutils literal notranslate"><span class="pre">Player</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_player.html#pynimation.viewer.player.Player.getDeltaTime"><code class="docutils literal notranslate"><span class="pre">Player.getDeltaTime()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_player.html#pynimation.viewer.player.Player.getTime"><code class="docutils literal notranslate"><span class="pre">Player.getTime()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_player.html#pynimation.viewer.player.Player.start"><code class="docutils literal notranslate"><span class="pre">Player.start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_player.html#pynimation.viewer.player.Player.tick"><code class="docutils literal notranslate"><span class="pre">Player.tick()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_pynimexporter.html">PynimExporter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_pynimexporter.html#pynimation.io.pynim.exporter.PynimExporter"><code class="docutils literal notranslate"><span class="pre">PynimExporter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_pynimexporter.html#pynimation.io.pynim.exporter.PynimExporter.CURRENT_VERSION"><code class="docutils literal notranslate"><span class="pre">PynimExporter.CURRENT_VERSION</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_pynimexporter.html#pynimation.io.pynim.exporter.PynimExporter.extension"><code class="docutils literal notranslate"><span class="pre">PynimExporter.extension</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_pynimexporter.html#pynimation.io.pynim.exporter.PynimExporter.save"><code class="docutils literal notranslate"><span class="pre">PynimExporter.save()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_pynimexporter.html#pynimation.io.pynim.exporter.PynimExporter.saveFrame"><code class="docutils literal notranslate"><span class="pre">PynimExporter.saveFrame()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_pynimexporter.html#pynimation.io.pynim.exporter.PynimExporter.saveSkeleton"><code class="docutils literal notranslate"><span class="pre">PynimExporter.saveSkeleton()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_pynimimporter.html">PynimImporter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_pynimimporter.html#pynimation.io.pynim.importer.PynimImporter"><code class="docutils literal notranslate"><span class="pre">PynimImporter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_pynimimporter.html#pynimation.io.pynim.importer.PynimImporter.extension"><code class="docutils literal notranslate"><span class="pre">PynimImporter.extension</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_pynimimporter.html#pynimation.io.pynim.importer.PynimImporter.load"><code class="docutils literal notranslate"><span class="pre">PynimImporter.load()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_pynimimporter.html#pynimation.io.pynim.importer.PynimImporter.loadFrame"><code class="docutils literal notranslate"><span class="pre">PynimImporter.loadFrame()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_pynimimporter.html#pynimation.io.pynim.importer.PynimImporter.loadSkeleton"><code class="docutils literal notranslate"><span class="pre">PynimImporter.loadSkeleton()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_randomwalk.html">RandomWalk</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_randomwalk.html#pynimation.anim.motiongraph.randomwalk.RandomWalk"><code class="docutils literal notranslate"><span class="pre">RandomWalk</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_randomwalk.html#pynimation.anim.motiongraph.randomwalk.RandomWalk.mograph"><code class="docutils literal notranslate"><span class="pre">RandomWalk.mograph</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_randomwalk.html#pynimation.anim.motiongraph.randomwalk.RandomWalk.currentNode"><code class="docutils literal notranslate"><span class="pre">RandomWalk.currentNode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_randomwalk.html#pynimation.anim.motiongraph.randomwalk.RandomWalk.cumulatedTime"><code class="docutils literal notranslate"><span class="pre">RandomWalk.cumulatedTime</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_randomwalk.html#pynimation.anim.motiongraph.randomwalk.RandomWalk.remainingTime"><code class="docutils literal notranslate"><span class="pre">RandomWalk.remainingTime</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_randomwalk.html#pynimation.anim.motiongraph.randomwalk.RandomWalk.cumulatedTransform"><code class="docutils literal notranslate"><span class="pre">RandomWalk.cumulatedTransform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_randomwalk.html#pynimation.anim.motiongraph.randomwalk.RandomWalk.getCurrentFrame"><code class="docutils literal notranslate"><span class="pre">RandomWalk.getCurrentFrame()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_randomwalk.html#pynimation.anim.motiongraph.randomwalk.RandomWalk.update"><code class="docutils literal notranslate"><span class="pre">RandomWalk.update()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_referencesystem.html">ReferenceSystem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_referencesystem.html#pynimation.viewer.objects.reference_system.ReferenceSystem"><code class="docutils literal notranslate"><span class="pre">ReferenceSystem</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_referencesystem.html#pynimation.viewer.objects.reference_system.ReferenceSystem.sizeFactor"><code class="docutils literal notranslate"><span class="pre">ReferenceSystem.sizeFactor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_referencesystem.html#pynimation.viewer.objects.reference_system.ReferenceSystem.radius"><code class="docutils literal notranslate"><span class="pre">ReferenceSystem.radius</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_referencesystem.html#pynimation.viewer.objects.reference_system.ReferenceSystem.phong"><code class="docutils literal notranslate"><span class="pre">ReferenceSystem.phong</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_referencesystem.html#pynimation.viewer.objects.reference_system.ReferenceSystem.addChild"><code class="docutils literal notranslate"><span class="pre">ReferenceSystem.addChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_referencesystem.html#pynimation.viewer.objects.reference_system.ReferenceSystem.children"><code class="docutils literal notranslate"><span class="pre">ReferenceSystem.children</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_referencesystem.html#pynimation.viewer.objects.reference_system.ReferenceSystem.descendants"><code class="docutils literal notranslate"><span class="pre">ReferenceSystem.descendants()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_referencesystem.html#pynimation.viewer.objects.reference_system.ReferenceSystem.display"><code class="docutils literal notranslate"><span class="pre">ReferenceSystem.display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_referencesystem.html#pynimation.viewer.objects.reference_system.ReferenceSystem.fromDict"><code class="docutils literal notranslate"><span class="pre">ReferenceSystem.fromDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_referencesystem.html#pynimation.viewer.objects.reference_system.ReferenceSystem.globalTransform"><code class="docutils literal notranslate"><span class="pre">ReferenceSystem.globalTransform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_referencesystem.html#pynimation.viewer.objects.reference_system.ReferenceSystem.notify"><code class="docutils literal notranslate"><span class="pre">ReferenceSystem.notify()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_referencesystem.html#pynimation.viewer.objects.reference_system.ReferenceSystem.parent"><code class="docutils literal notranslate"><span class="pre">ReferenceSystem.parent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_referencesystem.html#pynimation.viewer.objects.reference_system.ReferenceSystem.removeChild"><code class="docutils literal notranslate"><span class="pre">ReferenceSystem.removeChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_referencesystem.html#pynimation.viewer.objects.reference_system.ReferenceSystem.setPosition"><code class="docutils literal notranslate"><span class="pre">ReferenceSystem.setPosition()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_referencesystem.html#pynimation.viewer.objects.reference_system.ReferenceSystem.toDict"><code class="docutils literal notranslate"><span class="pre">ReferenceSystem.toDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_referencesystem.html#pynimation.viewer.objects.reference_system.ReferenceSystem.transform"><code class="docutils literal notranslate"><span class="pre">ReferenceSystem.transform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_referencesystem.html#pynimation.viewer.objects.reference_system.ReferenceSystem.translate"><code class="docutils literal notranslate"><span class="pre">ReferenceSystem.translate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_referencesystem.html#pynimation.viewer.objects.reference_system.ReferenceSystem.update"><code class="docutils literal notranslate"><span class="pre">ReferenceSystem.update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_referencesystem.html#pynimation.viewer.objects.reference_system.ReferenceSystem.updateRecursive"><code class="docutils literal notranslate"><span class="pre">ReferenceSystem.updateRecursive()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_referencesystem.html#pynimation.viewer.objects.reference_system.ReferenceSystem.valid"><code class="docutils literal notranslate"><span class="pre">ReferenceSystem.valid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_rotationtools.html">RotationTools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_rotationtools.html#pynimation.common.rotation_tools.RotationTools"><code class="docutils literal notranslate"><span class="pre">RotationTools</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_rotationtools.html#pynimation.common.rotation_tools.RotationTools.getAxis"><code class="docutils literal notranslate"><span class="pre">RotationTools.getAxis()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_rotationtools.html#pynimation.common.rotation_tools.RotationTools.getDegrees"><code class="docutils literal notranslate"><span class="pre">RotationTools.getDegrees()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_rotationtools.html#pynimation.common.rotation_tools.RotationTools.getRadians"><code class="docutils literal notranslate"><span class="pre">RotationTools.getRadians()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_rotationtools.html#pynimation.common.rotation_tools.RotationTools.normalize"><code class="docutils literal notranslate"><span class="pre">RotationTools.normalize()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_rotationtools.html#pynimation.common.rotation_tools.RotationTools.signedAngleBetweenDeg"><code class="docutils literal notranslate"><span class="pre">RotationTools.signedAngleBetweenDeg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_rotationtools.html#pynimation.common.rotation_tools.RotationTools.unsignedAngleBetweenDeg"><code class="docutils literal notranslate"><span class="pre">RotationTools.unsignedAngleBetweenDeg()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_scene.html">Scene</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_scene.html#pynimation.viewer.scene.Scene"><code class="docutils literal notranslate"><span class="pre">Scene</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_scene.html#pynimation.viewer.scene.Scene.cameras"><code class="docutils literal notranslate"><span class="pre">Scene.cameras</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scene.html#pynimation.viewer.scene.Scene.root"><code class="docutils literal notranslate"><span class="pre">Scene.root</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scene.html#pynimation.viewer.scene.Scene.graph"><code class="docutils literal notranslate"><span class="pre">Scene.graph</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scene.html#pynimation.viewer.scene.Scene.light"><code class="docutils literal notranslate"><span class="pre">Scene.light</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scene.html#pynimation.viewer.scene.Scene.add"><code class="docutils literal notranslate"><span class="pre">Scene.add()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scene.html#pynimation.viewer.scene.Scene.addInLine"><code class="docutils literal notranslate"><span class="pre">Scene.addInLine()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scene.html#pynimation.viewer.scene.Scene.display"><code class="docutils literal notranslate"><span class="pre">Scene.display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scene.html#pynimation.viewer.scene.Scene.remove"><code class="docutils literal notranslate"><span class="pre">Scene.remove()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_scenegraph.html">SceneGraph</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_scenegraph.html#pynimation.viewer.scene_graph.SceneGraph"><code class="docutils literal notranslate"><span class="pre">SceneGraph</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_scenegraph.html#pynimation.viewer.scene_graph.SceneGraph.add"><code class="docutils literal notranslate"><span class="pre">SceneGraph.add()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scenegraph.html#pynimation.viewer.scene_graph.SceneGraph.fromDict"><code class="docutils literal notranslate"><span class="pre">SceneGraph.fromDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scenegraph.html#pynimation.viewer.scene_graph.SceneGraph.getNode"><code class="docutils literal notranslate"><span class="pre">SceneGraph.getNode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scenegraph.html#pynimation.viewer.scene_graph.SceneGraph.globalTransforms"><code class="docutils literal notranslate"><span class="pre">SceneGraph.globalTransforms</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scenegraph.html#pynimation.viewer.scene_graph.SceneGraph.hasSameTopology"><code class="docutils literal notranslate"><span class="pre">SceneGraph.hasSameTopology()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scenegraph.html#pynimation.viewer.scene_graph.SceneGraph.nodes"><code class="docutils literal notranslate"><span class="pre">SceneGraph.nodes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scenegraph.html#pynimation.viewer.scene_graph.SceneGraph.remove"><code class="docutils literal notranslate"><span class="pre">SceneGraph.remove()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scenegraph.html#pynimation.viewer.scene_graph.SceneGraph.root"><code class="docutils literal notranslate"><span class="pre">SceneGraph.root</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scenegraph.html#pynimation.viewer.scene_graph.SceneGraph.toDict"><code class="docutils literal notranslate"><span class="pre">SceneGraph.toDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scenegraph.html#pynimation.viewer.scene_graph.SceneGraph.transforms"><code class="docutils literal notranslate"><span class="pre">SceneGraph.transforms</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scenegraph.html#pynimation.viewer.scene_graph.SceneGraph.updateAll"><code class="docutils literal notranslate"><span class="pre">SceneGraph.updateAll()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_scenenode.html">SceneNode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_scenenode.html#pynimation.viewer.scene_graph.SceneNode"><code class="docutils literal notranslate"><span class="pre">SceneNode</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_scenenode.html#pynimation.viewer.scene_graph.SceneNode.addChild"><code class="docutils literal notranslate"><span class="pre">SceneNode.addChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scenenode.html#pynimation.viewer.scene_graph.SceneNode.children"><code class="docutils literal notranslate"><span class="pre">SceneNode.children</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scenenode.html#pynimation.viewer.scene_graph.SceneNode.descendants"><code class="docutils literal notranslate"><span class="pre">SceneNode.descendants()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scenenode.html#pynimation.viewer.scene_graph.SceneNode.display"><code class="docutils literal notranslate"><span class="pre">SceneNode.display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scenenode.html#pynimation.viewer.scene_graph.SceneNode.fromDict"><code class="docutils literal notranslate"><span class="pre">SceneNode.fromDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scenenode.html#pynimation.viewer.scene_graph.SceneNode.globalTransform"><code class="docutils literal notranslate"><span class="pre">SceneNode.globalTransform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scenenode.html#pynimation.viewer.scene_graph.SceneNode.notify"><code class="docutils literal notranslate"><span class="pre">SceneNode.notify()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scenenode.html#pynimation.viewer.scene_graph.SceneNode.parent"><code class="docutils literal notranslate"><span class="pre">SceneNode.parent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scenenode.html#pynimation.viewer.scene_graph.SceneNode.removeChild"><code class="docutils literal notranslate"><span class="pre">SceneNode.removeChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scenenode.html#pynimation.viewer.scene_graph.SceneNode.toDict"><code class="docutils literal notranslate"><span class="pre">SceneNode.toDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scenenode.html#pynimation.viewer.scene_graph.SceneNode.transform"><code class="docutils literal notranslate"><span class="pre">SceneNode.transform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scenenode.html#pynimation.viewer.scene_graph.SceneNode.update"><code class="docutils literal notranslate"><span class="pre">SceneNode.update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scenenode.html#pynimation.viewer.scene_graph.SceneNode.updateRecursive"><code class="docutils literal notranslate"><span class="pre">SceneNode.updateRecursive()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_scenenode.html#pynimation.viewer.scene_graph.SceneNode.valid"><code class="docutils literal notranslate"><span class="pre">SceneNode.valid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_similarity.html">Similarity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_similarity.html#pynimation.anim.metrics.similarity.Similarity"><code class="docutils literal notranslate"><span class="pre">Similarity</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_similarity.html#pynimation.anim.metrics.similarity.Similarity.metric"><code class="docutils literal notranslate"><span class="pre">Similarity.metric</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_similarity.html#pynimation.anim.metrics.similarity.Similarity.anim1"><code class="docutils literal notranslate"><span class="pre">Similarity.anim1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_similarity.html#pynimation.anim.metrics.similarity.Similarity.anim2"><code class="docutils literal notranslate"><span class="pre">Similarity.anim2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_similarity.html#pynimation.anim.metrics.similarity.Similarity.skeletonMap"><code class="docutils literal notranslate"><span class="pre">Similarity.skeletonMap</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_similarity.html#pynimation.anim.metrics.similarity.Similarity.similarities"><code class="docutils literal notranslate"><span class="pre">Similarity.similarities</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_similarity.html#pynimation.anim.metrics.similarity.Similarity.selfSimilarity"><code class="docutils literal notranslate"><span class="pre">Similarity.selfSimilarity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_similarity.html#pynimation.anim.metrics.similarity.Similarity.computeLocalMinima"><code class="docutils literal notranslate"><span class="pre">Similarity.computeLocalMinima()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_similarity.html#pynimation.anim.metrics.similarity.Similarity.computeSimilarity"><code class="docutils literal notranslate"><span class="pre">Similarity.computeSimilarity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_similarity.html#pynimation.anim.metrics.similarity.Similarity.gaussianSmooth"><code class="docutils literal notranslate"><span class="pre">Similarity.gaussianSmooth()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_similarity.html#pynimation.anim.metrics.similarity.Similarity.getLocalMinima"><code class="docutils literal notranslate"><span class="pre">Similarity.getLocalMinima()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_similarity.html#pynimation.anim.metrics.similarity.Similarity.toImage"><code class="docutils literal notranslate"><span class="pre">Similarity.toImage()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_skeleton.html">Skeleton</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_skeleton.html#pynimation.anim.skeleton.Skeleton"><code class="docutils literal notranslate"><span class="pre">Skeleton</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_skeleton.html#pynimation.anim.skeleton.Skeleton.root"><code class="docutils literal notranslate"><span class="pre">Skeleton.root</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_skeleton.html#pynimation.anim.skeleton.Skeleton.SkeletalPart"><code class="docutils literal notranslate"><span class="pre">Skeleton.SkeletalPart</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_skeleton.html#pynimation.anim.skeleton.Skeleton.add"><code class="docutils literal notranslate"><span class="pre">Skeleton.add()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_skeleton.html#pynimation.anim.skeleton.Skeleton.createProxyBone"><code class="docutils literal notranslate"><span class="pre">Skeleton.createProxyBone()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_skeleton.html#pynimation.anim.skeleton.Skeleton.destroyProxyBone"><code class="docutils literal notranslate"><span class="pre">Skeleton.destroyProxyBone()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_skeleton.html#pynimation.anim.skeleton.Skeleton.fromDict"><code class="docutils literal notranslate"><span class="pre">Skeleton.fromDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_skeleton.html#pynimation.anim.skeleton.Skeleton.getNode"><code class="docutils literal notranslate"><span class="pre">Skeleton.getNode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_skeleton.html#pynimation.anim.skeleton.Skeleton.getSkeletalPart"><code class="docutils literal notranslate"><span class="pre">Skeleton.getSkeletalPart()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_skeleton.html#pynimation.anim.skeleton.Skeleton.getSubSkeleton"><code class="docutils literal notranslate"><span class="pre">Skeleton.getSubSkeleton()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_skeleton.html#pynimation.anim.skeleton.Skeleton.globalTransforms"><code class="docutils literal notranslate"><span class="pre">Skeleton.globalTransforms</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_skeleton.html#pynimation.anim.skeleton.Skeleton.hasSameTopology"><code class="docutils literal notranslate"><span class="pre">Skeleton.hasSameTopology()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_skeleton.html#pynimation.anim.skeleton.Skeleton.joints"><code class="docutils literal notranslate"><span class="pre">Skeleton.joints</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_skeleton.html#pynimation.anim.skeleton.Skeleton.jointsNames"><code class="docutils literal notranslate"><span class="pre">Skeleton.jointsNames</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_skeleton.html#pynimation.anim.skeleton.Skeleton.mapHumanoidSkeleton"><code class="docutils literal notranslate"><span class="pre">Skeleton.mapHumanoidSkeleton()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_skeleton.html#pynimation.anim.skeleton.Skeleton.nodes"><code class="docutils literal notranslate"><span class="pre">Skeleton.nodes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_skeleton.html#pynimation.anim.skeleton.Skeleton.remove"><code class="docutils literal notranslate"><span class="pre">Skeleton.remove()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_skeleton.html#id0"><code class="docutils literal notranslate"><span class="pre">Skeleton.root</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_skeleton.html#pynimation.anim.skeleton.Skeleton.toDict"><code class="docutils literal notranslate"><span class="pre">Skeleton.toDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_skeleton.html#pynimation.anim.skeleton.Skeleton.transforms"><code class="docutils literal notranslate"><span class="pre">Skeleton.transforms</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_skeleton.html#pynimation.anim.skeleton.Skeleton.updateAll"><code class="docutils literal notranslate"><span class="pre">Skeleton.updateAll()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_sphere.html">Sphere</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_sphere.html#pynimation.viewer.objects.sphere.Sphere"><code class="docutils literal notranslate"><span class="pre">Sphere</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_sphere.html#pynimation.viewer.objects.sphere.Sphere.radius"><code class="docutils literal notranslate"><span class="pre">Sphere.radius</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_sphere.html#pynimation.viewer.objects.sphere.Sphere.color"><code class="docutils literal notranslate"><span class="pre">Sphere.color</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_sphere.html#pynimation.viewer.objects.sphere.Sphere.numberSegments"><code class="docutils literal notranslate"><span class="pre">Sphere.numberSegments</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_sphere.html#pynimation.viewer.objects.sphere.Sphere.addChild"><code class="docutils literal notranslate"><span class="pre">Sphere.addChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_sphere.html#pynimation.viewer.objects.sphere.Sphere.automaticallyLinkShaderUniforms"><code class="docutils literal notranslate"><span class="pre">Sphere.automaticallyLinkShaderUniforms()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_sphere.html#pynimation.viewer.objects.sphere.Sphere.children"><code class="docutils literal notranslate"><span class="pre">Sphere.children</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_sphere.html#pynimation.viewer.objects.sphere.Sphere.computeNormals"><code class="docutils literal notranslate"><span class="pre">Sphere.computeNormals()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_sphere.html#pynimation.viewer.objects.sphere.Sphere.createFaceIndexes"><code class="docutils literal notranslate"><span class="pre">Sphere.createFaceIndexes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_sphere.html#pynimation.viewer.objects.sphere.Sphere.descendants"><code class="docutils literal notranslate"><span class="pre">Sphere.descendants()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_sphere.html#pynimation.viewer.objects.sphere.Sphere.display"><code class="docutils literal notranslate"><span class="pre">Sphere.display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_sphere.html#pynimation.viewer.objects.sphere.Sphere.drawBuffers"><code class="docutils literal notranslate"><span class="pre">Sphere.drawBuffers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_sphere.html#pynimation.viewer.objects.sphere.Sphere.fromDict"><code class="docutils literal notranslate"><span class="pre">Sphere.fromDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_sphere.html#pynimation.viewer.objects.sphere.Sphere.globalTransform"><code class="docutils literal notranslate"><span class="pre">Sphere.globalTransform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_sphere.html#pynimation.viewer.objects.sphere.Sphere.linkShaderData"><code class="docutils literal notranslate"><span class="pre">Sphere.linkShaderData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_sphere.html#pynimation.viewer.objects.sphere.Sphere.linkShaderTextureData"><code class="docutils literal notranslate"><span class="pre">Sphere.linkShaderTextureData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_sphere.html#pynimation.viewer.objects.sphere.Sphere.linkShaderUniforms"><code class="docutils literal notranslate"><span class="pre">Sphere.linkShaderUniforms()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_sphere.html#pynimation.viewer.objects.sphere.Sphere.notify"><code class="docutils literal notranslate"><span class="pre">Sphere.notify()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_sphere.html#pynimation.viewer.objects.sphere.Sphere.parent"><code class="docutils literal notranslate"><span class="pre">Sphere.parent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_sphere.html#pynimation.viewer.objects.sphere.Sphere.removeChild"><code class="docutils literal notranslate"><span class="pre">Sphere.removeChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_sphere.html#pynimation.viewer.objects.sphere.Sphere.setShaderData"><code class="docutils literal notranslate"><span class="pre">Sphere.setShaderData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_sphere.html#pynimation.viewer.objects.sphere.Sphere.setUndefinedShaderData"><code class="docutils literal notranslate"><span class="pre">Sphere.setUndefinedShaderData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_sphere.html#pynimation.viewer.objects.sphere.Sphere.toDict"><code class="docutils literal notranslate"><span class="pre">Sphere.toDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_sphere.html#pynimation.viewer.objects.sphere.Sphere.transform"><code class="docutils literal notranslate"><span class="pre">Sphere.transform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_sphere.html#pynimation.viewer.objects.sphere.Sphere.update"><code class="docutils literal notranslate"><span class="pre">Sphere.update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_sphere.html#pynimation.viewer.objects.sphere.Sphere.updateRecursive"><code class="docutils literal notranslate"><span class="pre">Sphere.updateRecursive()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_sphere.html#pynimation.viewer.objects.sphere.Sphere.valid"><code class="docutils literal notranslate"><span class="pre">Sphere.valid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_stickfigure.html">StickFigure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_stickfigure.html#pynimation.viewer.stickfigure.StickFigure"><code class="docutils literal notranslate"><span class="pre">StickFigure</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_stickfigure.html#pynimation.viewer.stickfigure.StickFigure.skeleton"><code class="docutils literal notranslate"><span class="pre">StickFigure.skeleton</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_stickfigure.html#pynimation.viewer.stickfigure.StickFigure.color"><code class="docutils literal notranslate"><span class="pre">StickFigure.color</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_stickfigure.html#pynimation.viewer.stickfigure.StickFigure.boneRadius"><code class="docutils literal notranslate"><span class="pre">StickFigure.boneRadius</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_stickfigure.html#pynimation.viewer.stickfigure.StickFigure.addChild"><code class="docutils literal notranslate"><span class="pre">StickFigure.addChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_stickfigure.html#pynimation.viewer.stickfigure.StickFigure.animate"><code class="docutils literal notranslate"><span class="pre">StickFigure.animate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_stickfigure.html#pynimation.viewer.stickfigure.StickFigure.children"><code class="docutils literal notranslate"><span class="pre">StickFigure.children</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_stickfigure.html#pynimation.viewer.stickfigure.StickFigure.descendants"><code class="docutils literal notranslate"><span class="pre">StickFigure.descendants()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_stickfigure.html#pynimation.viewer.stickfigure.StickFigure.display"><code class="docutils literal notranslate"><span class="pre">StickFigure.display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_stickfigure.html#pynimation.viewer.stickfigure.StickFigure.fromDict"><code class="docutils literal notranslate"><span class="pre">StickFigure.fromDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_stickfigure.html#pynimation.viewer.stickfigure.StickFigure.globalTransform"><code class="docutils literal notranslate"><span class="pre">StickFigure.globalTransform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_stickfigure.html#pynimation.viewer.stickfigure.StickFigure.notify"><code class="docutils literal notranslate"><span class="pre">StickFigure.notify()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_stickfigure.html#pynimation.viewer.stickfigure.StickFigure.parent"><code class="docutils literal notranslate"><span class="pre">StickFigure.parent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_stickfigure.html#pynimation.viewer.stickfigure.StickFigure.removeChild"><code class="docutils literal notranslate"><span class="pre">StickFigure.removeChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_stickfigure.html#pynimation.viewer.stickfigure.StickFigure.toDict"><code class="docutils literal notranslate"><span class="pre">StickFigure.toDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_stickfigure.html#pynimation.viewer.stickfigure.StickFigure.transform"><code class="docutils literal notranslate"><span class="pre">StickFigure.transform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_stickfigure.html#pynimation.viewer.stickfigure.StickFigure.update"><code class="docutils literal notranslate"><span class="pre">StickFigure.update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_stickfigure.html#pynimation.viewer.stickfigure.StickFigure.updateRecursive"><code class="docutils literal notranslate"><span class="pre">StickFigure.updateRecursive()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_stickfigure.html#pynimation.viewer.stickfigure.StickFigure.valid"><code class="docutils literal notranslate"><span class="pre">StickFigure.valid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_texture.html">Texture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_texture.html#pynimation.viewer.texture.Texture"><code class="docutils literal notranslate"><span class="pre">Texture</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_texture.html#pynimation.viewer.texture.Texture.use"><code class="docutils literal notranslate"><span class="pre">Texture.use()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_threadcreateframe.html">ThreadCreateFrame</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_threadcreateframe.html#pynimation.io.bvh.importer.ThreadCreateFrame"><code class="docutils literal notranslate"><span class="pre">ThreadCreateFrame</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_threadcreateframe.html#pynimation.io.bvh.importer.ThreadCreateFrame.daemon"><code class="docutils literal notranslate"><span class="pre">ThreadCreateFrame.daemon</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_threadcreateframe.html#pynimation.io.bvh.importer.ThreadCreateFrame.getName"><code class="docutils literal notranslate"><span class="pre">ThreadCreateFrame.getName()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_threadcreateframe.html#pynimation.io.bvh.importer.ThreadCreateFrame.ident"><code class="docutils literal notranslate"><span class="pre">ThreadCreateFrame.ident</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_threadcreateframe.html#pynimation.io.bvh.importer.ThreadCreateFrame.isDaemon"><code class="docutils literal notranslate"><span class="pre">ThreadCreateFrame.isDaemon()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_threadcreateframe.html#pynimation.io.bvh.importer.ThreadCreateFrame.is_alive"><code class="docutils literal notranslate"><span class="pre">ThreadCreateFrame.is_alive()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_threadcreateframe.html#pynimation.io.bvh.importer.ThreadCreateFrame.join"><code class="docutils literal notranslate"><span class="pre">ThreadCreateFrame.join()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_threadcreateframe.html#pynimation.io.bvh.importer.ThreadCreateFrame.name"><code class="docutils literal notranslate"><span class="pre">ThreadCreateFrame.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_threadcreateframe.html#pynimation.io.bvh.importer.ThreadCreateFrame.native_id"><code class="docutils literal notranslate"><span class="pre">ThreadCreateFrame.native_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_threadcreateframe.html#pynimation.io.bvh.importer.ThreadCreateFrame.run"><code class="docutils literal notranslate"><span class="pre">ThreadCreateFrame.run()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_threadcreateframe.html#pynimation.io.bvh.importer.ThreadCreateFrame.setDaemon"><code class="docutils literal notranslate"><span class="pre">ThreadCreateFrame.setDaemon()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_threadcreateframe.html#pynimation.io.bvh.importer.ThreadCreateFrame.setName"><code class="docutils literal notranslate"><span class="pre">ThreadCreateFrame.setName()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_threadcreateframe.html#pynimation.io.bvh.importer.ThreadCreateFrame.start"><code class="docutils literal notranslate"><span class="pre">ThreadCreateFrame.start()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_transform.html">Transform</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform"><code class="docutils literal notranslate"><span class="pre">Transform</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.matrix"><code class="docutils literal notranslate"><span class="pre">Transform.matrix</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.computeProjectionMatrix"><code class="docutils literal notranslate"><span class="pre">Transform.computeProjectionMatrix()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.computeXZOffset"><code class="docutils literal notranslate"><span class="pre">Transform.computeXZOffset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.copy"><code class="docutils literal notranslate"><span class="pre">Transform.copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.extractXZTransform"><code class="docutils literal notranslate"><span class="pre">Transform.extractXZTransform()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.getPosition"><code class="docutils literal notranslate"><span class="pre">Transform.getPosition()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.getPositionTransform"><code class="docutils literal notranslate"><span class="pre">Transform.getPositionTransform()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.getQuaternion"><code class="docutils literal notranslate"><span class="pre">Transform.getQuaternion()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.getRotation"><code class="docutils literal notranslate"><span class="pre">Transform.getRotation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.getRotationTransform"><code class="docutils literal notranslate"><span class="pre">Transform.getRotationTransform()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.getScale"><code class="docutils literal notranslate"><span class="pre">Transform.getScale()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.getScaleTransform"><code class="docutils literal notranslate"><span class="pre">Transform.getScaleTransform()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.getXVector"><code class="docutils literal notranslate"><span class="pre">Transform.getXVector()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.getYVector"><code class="docutils literal notranslate"><span class="pre">Transform.getYVector()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.getZVector"><code class="docutils literal notranslate"><span class="pre">Transform.getZVector()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.interpolate"><code class="docutils literal notranslate"><span class="pre">Transform.interpolate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.inverse"><code class="docutils literal notranslate"><span class="pre">Transform.inverse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.lookAt"><code class="docutils literal notranslate"><span class="pre">Transform.lookAt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.lookAtOrientation"><code class="docutils literal notranslate"><span class="pre">Transform.lookAtOrientation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#id0"><code class="docutils literal notranslate"><span class="pre">Transform.matrix</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.notifyObservers"><code class="docutils literal notranslate"><span class="pre">Transform.notifyObservers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.registerObserver"><code class="docutils literal notranslate"><span class="pre">Transform.registerObserver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.rotate"><code class="docutils literal notranslate"><span class="pre">Transform.rotate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.rotationMatrixAlignVectors"><code class="docutils literal notranslate"><span class="pre">Transform.rotationMatrixAlignVectors()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.rotationMatrixXDeg"><code class="docutils literal notranslate"><span class="pre">Transform.rotationMatrixXDeg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.rotationMatrixYDeg"><code class="docutils literal notranslate"><span class="pre">Transform.rotationMatrixYDeg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.rotationMatrixZDeg"><code class="docutils literal notranslate"><span class="pre">Transform.rotationMatrixZDeg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.setAxisAngle"><code class="docutils literal notranslate"><span class="pre">Transform.setAxisAngle()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.setIdentity"><code class="docutils literal notranslate"><span class="pre">Transform.setIdentity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.setPosition"><code class="docutils literal notranslate"><span class="pre">Transform.setPosition()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.setQuaternion"><code class="docutils literal notranslate"><span class="pre">Transform.setQuaternion()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.setRotation"><code class="docutils literal notranslate"><span class="pre">Transform.setRotation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.setScale"><code class="docutils literal notranslate"><span class="pre">Transform.setScale()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.translate"><code class="docutils literal notranslate"><span class="pre">Transform.translate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.transpose"><code class="docutils literal notranslate"><span class="pre">Transform.transpose()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transform.html#pynimation.common.transform.Transform.unregisterObserver"><code class="docutils literal notranslate"><span class="pre">Transform.unregisterObserver()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_transformgraph.html">TransformGraph</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_transformgraph.html#pynimation.common.transform_graph.TransformGraph"><code class="docutils literal notranslate"><span class="pre">TransformGraph</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_transformgraph.html#pynimation.common.transform_graph.TransformGraph.add"><code class="docutils literal notranslate"><span class="pre">TransformGraph.add()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transformgraph.html#pynimation.common.transform_graph.TransformGraph.fromDict"><code class="docutils literal notranslate"><span class="pre">TransformGraph.fromDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transformgraph.html#pynimation.common.transform_graph.TransformGraph.getNode"><code class="docutils literal notranslate"><span class="pre">TransformGraph.getNode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transformgraph.html#pynimation.common.transform_graph.TransformGraph.globalTransforms"><code class="docutils literal notranslate"><span class="pre">TransformGraph.globalTransforms</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transformgraph.html#pynimation.common.transform_graph.TransformGraph.hasSameTopology"><code class="docutils literal notranslate"><span class="pre">TransformGraph.hasSameTopology()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transformgraph.html#pynimation.common.transform_graph.TransformGraph.nodes"><code class="docutils literal notranslate"><span class="pre">TransformGraph.nodes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transformgraph.html#pynimation.common.transform_graph.TransformGraph.remove"><code class="docutils literal notranslate"><span class="pre">TransformGraph.remove()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transformgraph.html#pynimation.common.transform_graph.TransformGraph.root"><code class="docutils literal notranslate"><span class="pre">TransformGraph.root</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transformgraph.html#pynimation.common.transform_graph.TransformGraph.toDict"><code class="docutils literal notranslate"><span class="pre">TransformGraph.toDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transformgraph.html#pynimation.common.transform_graph.TransformGraph.transforms"><code class="docutils literal notranslate"><span class="pre">TransformGraph.transforms</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transformgraph.html#pynimation.common.transform_graph.TransformGraph.updateAll"><code class="docutils literal notranslate"><span class="pre">TransformGraph.updateAll()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_transformnode.html">TransformNode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_transformnode.html#pynimation.common.transform_graph.TransformNode"><code class="docutils literal notranslate"><span class="pre">TransformNode</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_transformnode.html#pynimation.common.transform_graph.TransformNode.addChild"><code class="docutils literal notranslate"><span class="pre">TransformNode.addChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transformnode.html#pynimation.common.transform_graph.TransformNode.children"><code class="docutils literal notranslate"><span class="pre">TransformNode.children</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transformnode.html#pynimation.common.transform_graph.TransformNode.descendants"><code class="docutils literal notranslate"><span class="pre">TransformNode.descendants()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transformnode.html#pynimation.common.transform_graph.TransformNode.fromDict"><code class="docutils literal notranslate"><span class="pre">TransformNode.fromDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transformnode.html#pynimation.common.transform_graph.TransformNode.globalTransform"><code class="docutils literal notranslate"><span class="pre">TransformNode.globalTransform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transformnode.html#pynimation.common.transform_graph.TransformNode.notify"><code class="docutils literal notranslate"><span class="pre">TransformNode.notify()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transformnode.html#pynimation.common.transform_graph.TransformNode.parent"><code class="docutils literal notranslate"><span class="pre">TransformNode.parent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transformnode.html#pynimation.common.transform_graph.TransformNode.removeChild"><code class="docutils literal notranslate"><span class="pre">TransformNode.removeChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transformnode.html#pynimation.common.transform_graph.TransformNode.toDict"><code class="docutils literal notranslate"><span class="pre">TransformNode.toDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transformnode.html#pynimation.common.transform_graph.TransformNode.transform"><code class="docutils literal notranslate"><span class="pre">TransformNode.transform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transformnode.html#pynimation.common.transform_graph.TransformNode.update"><code class="docutils literal notranslate"><span class="pre">TransformNode.update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transformnode.html#pynimation.common.transform_graph.TransformNode.updateRecursive"><code class="docutils literal notranslate"><span class="pre">TransformNode.updateRecursive()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_transformnode.html#pynimation.common.transform_graph.TransformNode.valid"><code class="docutils literal notranslate"><span class="pre">TransformNode.valid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_triangle.html">Triangle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle"><code class="docutils literal notranslate"><span class="pre">Triangle</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.pointA"><code class="docutils literal notranslate"><span class="pre">Triangle.pointA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.pointB"><code class="docutils literal notranslate"><span class="pre">Triangle.pointB</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.pointC"><code class="docutils literal notranslate"><span class="pre">Triangle.pointC</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.colorA"><code class="docutils literal notranslate"><span class="pre">Triangle.colorA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.colorB"><code class="docutils literal notranslate"><span class="pre">Triangle.colorB</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.colorC"><code class="docutils literal notranslate"><span class="pre">Triangle.colorC</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.normalA"><code class="docutils literal notranslate"><span class="pre">Triangle.normalA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.normalB"><code class="docutils literal notranslate"><span class="pre">Triangle.normalB</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.normalC"><code class="docutils literal notranslate"><span class="pre">Triangle.normalC</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.phong"><code class="docutils literal notranslate"><span class="pre">Triangle.phong</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.addChild"><code class="docutils literal notranslate"><span class="pre">Triangle.addChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.automaticallyLinkShaderUniforms"><code class="docutils literal notranslate"><span class="pre">Triangle.automaticallyLinkShaderUniforms()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.children"><code class="docutils literal notranslate"><span class="pre">Triangle.children</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.computeNormals"><code class="docutils literal notranslate"><span class="pre">Triangle.computeNormals()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.createFaceIndexes"><code class="docutils literal notranslate"><span class="pre">Triangle.createFaceIndexes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.descendants"><code class="docutils literal notranslate"><span class="pre">Triangle.descendants()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.display"><code class="docutils literal notranslate"><span class="pre">Triangle.display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.drawBuffers"><code class="docutils literal notranslate"><span class="pre">Triangle.drawBuffers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.fromDict"><code class="docutils literal notranslate"><span class="pre">Triangle.fromDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.globalTransform"><code class="docutils literal notranslate"><span class="pre">Triangle.globalTransform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.linkShaderData"><code class="docutils literal notranslate"><span class="pre">Triangle.linkShaderData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.linkShaderTextureData"><code class="docutils literal notranslate"><span class="pre">Triangle.linkShaderTextureData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.linkShaderUniforms"><code class="docutils literal notranslate"><span class="pre">Triangle.linkShaderUniforms()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.notify"><code class="docutils literal notranslate"><span class="pre">Triangle.notify()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.parent"><code class="docutils literal notranslate"><span class="pre">Triangle.parent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.removeChild"><code class="docutils literal notranslate"><span class="pre">Triangle.removeChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.setShaderData"><code class="docutils literal notranslate"><span class="pre">Triangle.setShaderData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.setUndefinedShaderData"><code class="docutils literal notranslate"><span class="pre">Triangle.setUndefinedShaderData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.toDict"><code class="docutils literal notranslate"><span class="pre">Triangle.toDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.transform"><code class="docutils literal notranslate"><span class="pre">Triangle.transform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.update"><code class="docutils literal notranslate"><span class="pre">Triangle.update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.updateRecursive"><code class="docutils literal notranslate"><span class="pre">Triangle.updateRecursive()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_triangle.html#pynimation.viewer.objects.triangle.Triangle.valid"><code class="docutils literal notranslate"><span class="pre">Triangle.valid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_vbobject.html">VBObject</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_vbobject.html#pynimation.viewer.vbo.VBObject"><code class="docutils literal notranslate"><span class="pre">VBObject</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_vbobject.html#pynimation.viewer.vbo.VBObject.addChild"><code class="docutils literal notranslate"><span class="pre">VBObject.addChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vbobject.html#pynimation.viewer.vbo.VBObject.automaticallyLinkShaderUniforms"><code class="docutils literal notranslate"><span class="pre">VBObject.automaticallyLinkShaderUniforms()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vbobject.html#pynimation.viewer.vbo.VBObject.children"><code class="docutils literal notranslate"><span class="pre">VBObject.children</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vbobject.html#pynimation.viewer.vbo.VBObject.computeNormals"><code class="docutils literal notranslate"><span class="pre">VBObject.computeNormals()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vbobject.html#pynimation.viewer.vbo.VBObject.createFaceIndexes"><code class="docutils literal notranslate"><span class="pre">VBObject.createFaceIndexes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vbobject.html#pynimation.viewer.vbo.VBObject.descendants"><code class="docutils literal notranslate"><span class="pre">VBObject.descendants()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vbobject.html#pynimation.viewer.vbo.VBObject.display"><code class="docutils literal notranslate"><span class="pre">VBObject.display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vbobject.html#pynimation.viewer.vbo.VBObject.drawBuffers"><code class="docutils literal notranslate"><span class="pre">VBObject.drawBuffers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vbobject.html#pynimation.viewer.vbo.VBObject.fromDict"><code class="docutils literal notranslate"><span class="pre">VBObject.fromDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vbobject.html#pynimation.viewer.vbo.VBObject.globalTransform"><code class="docutils literal notranslate"><span class="pre">VBObject.globalTransform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vbobject.html#pynimation.viewer.vbo.VBObject.linkShaderData"><code class="docutils literal notranslate"><span class="pre">VBObject.linkShaderData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vbobject.html#pynimation.viewer.vbo.VBObject.linkShaderTextureData"><code class="docutils literal notranslate"><span class="pre">VBObject.linkShaderTextureData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vbobject.html#pynimation.viewer.vbo.VBObject.linkShaderUniforms"><code class="docutils literal notranslate"><span class="pre">VBObject.linkShaderUniforms()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vbobject.html#pynimation.viewer.vbo.VBObject.notify"><code class="docutils literal notranslate"><span class="pre">VBObject.notify()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vbobject.html#pynimation.viewer.vbo.VBObject.parent"><code class="docutils literal notranslate"><span class="pre">VBObject.parent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vbobject.html#pynimation.viewer.vbo.VBObject.removeChild"><code class="docutils literal notranslate"><span class="pre">VBObject.removeChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vbobject.html#pynimation.viewer.vbo.VBObject.setShaderData"><code class="docutils literal notranslate"><span class="pre">VBObject.setShaderData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vbobject.html#pynimation.viewer.vbo.VBObject.setUndefinedShaderData"><code class="docutils literal notranslate"><span class="pre">VBObject.setUndefinedShaderData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vbobject.html#pynimation.viewer.vbo.VBObject.toDict"><code class="docutils literal notranslate"><span class="pre">VBObject.toDict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vbobject.html#pynimation.viewer.vbo.VBObject.transform"><code class="docutils literal notranslate"><span class="pre">VBObject.transform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vbobject.html#pynimation.viewer.vbo.VBObject.update"><code class="docutils literal notranslate"><span class="pre">VBObject.update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vbobject.html#pynimation.viewer.vbo.VBObject.updateRecursive"><code class="docutils literal notranslate"><span class="pre">VBObject.updateRecursive()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vbobject.html#pynimation.viewer.vbo.VBObject.valid"><code class="docutils literal notranslate"><span class="pre">VBObject.valid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_vec3.html">Vec3</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_vec3.html#pynimation.common.vec3.Vec3"><code class="docutils literal notranslate"><span class="pre">Vec3</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_vec3.html#pynimation.common.vec3.Vec3.AddVec3"><code class="docutils literal notranslate"><span class="pre">Vec3.AddVec3()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vec3.html#pynimation.common.vec3.Vec3.DivVec3"><code class="docutils literal notranslate"><span class="pre">Vec3.DivVec3()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vec3.html#pynimation.common.vec3.Vec3.MultVec3"><code class="docutils literal notranslate"><span class="pre">Vec3.MultVec3()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vec3.html#pynimation.common.vec3.Vec3.SubVec3"><code class="docutils literal notranslate"><span class="pre">Vec3.SubVec3()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vec3.html#pynimation.common.vec3.Vec3.cross"><code class="docutils literal notranslate"><span class="pre">Vec3.cross()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vec3.html#pynimation.common.vec3.Vec3.dot"><code class="docutils literal notranslate"><span class="pre">Vec3.dot()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vec3.html#pynimation.common.vec3.Vec3.init"><code class="docutils literal notranslate"><span class="pre">Vec3.init()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vec3.html#pynimation.common.vec3.Vec3.length"><code class="docutils literal notranslate"><span class="pre">Vec3.length()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vec3.html#pynimation.common.vec3.Vec3.normalize"><code class="docutils literal notranslate"><span class="pre">Vec3.normalize()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_vec3.html#pynimation.common.vec3.Vec3.sub"><code class="docutils literal notranslate"><span class="pre">Vec3.sub()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_viewer.html">Viewer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_viewer.html#pynimation.viewer.viewer.Viewer"><code class="docutils literal notranslate"><span class="pre">Viewer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_viewer.html#pynimation.viewer.viewer.Viewer.camera"><code class="docutils literal notranslate"><span class="pre">Viewer.camera</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewer.html#pynimation.viewer.viewer.Viewer.viewport"><code class="docutils literal notranslate"><span class="pre">Viewer.viewport</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewer.html#pynimation.viewer.viewer.Viewer.player"><code class="docutils literal notranslate"><span class="pre">Viewer.player</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewer.html#pynimation.viewer.viewer.Viewer.cameraData"><code class="docutils literal notranslate"><span class="pre">Viewer.cameraData</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewer.html#pynimation.viewer.viewer.Viewer.CallbackTime"><code class="docutils literal notranslate"><span class="pre">Viewer.CallbackTime</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewer.html#pynimation.viewer.viewer.Viewer.addCallback"><code class="docutils literal notranslate"><span class="pre">Viewer.addCallback()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewer.html#pynimation.viewer.viewer.Viewer.addCallbackPartial"><code class="docutils literal notranslate"><span class="pre">Viewer.addCallbackPartial()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewer.html#pynimation.viewer.viewer.Viewer.defaultFloor"><code class="docutils literal notranslate"><span class="pre">Viewer.defaultFloor()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewer.html#pynimation.viewer.viewer.Viewer.defaultScene"><code class="docutils literal notranslate"><span class="pre">Viewer.defaultScene()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewer.html#pynimation.viewer.viewer.Viewer.display"><code class="docutils literal notranslate"><span class="pre">Viewer.display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewer.html#pynimation.viewer.viewer.Viewer.displayAnimation"><code class="docutils literal notranslate"><span class="pre">Viewer.displayAnimation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewer.html#pynimation.viewer.viewer.Viewer.displayAnimations"><code class="docutils literal notranslate"><span class="pre">Viewer.displayAnimations()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewer.html#pynimation.viewer.viewer.Viewer.displayScene"><code class="docutils literal notranslate"><span class="pre">Viewer.displayScene()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewer.html#pynimation.viewer.viewer.Viewer.removeCallback"><code class="docutils literal notranslate"><span class="pre">Viewer.removeCallback()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewer.html#pynimation.viewer.viewer.Viewer.removeCallbackPartial"><code class="docutils literal notranslate"><span class="pre">Viewer.removeCallbackPartial()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_viewport.html">Viewport</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_viewport.html#pynimation.viewer.viewport.Viewport"><code class="docutils literal notranslate"><span class="pre">Viewport</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="class_viewport.html#pynimation.viewer.viewport.Viewport.width"><code class="docutils literal notranslate"><span class="pre">Viewport.width</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewport.html#pynimation.viewer.viewport.Viewport.height"><code class="docutils literal notranslate"><span class="pre">Viewport.height</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewport.html#pynimation.viewer.viewport.Viewport.camera"><code class="docutils literal notranslate"><span class="pre">Viewport.camera</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewport.html#pynimation.viewer.viewport.Viewport.fullscreen"><code class="docutils literal notranslate"><span class="pre">Viewport.fullscreen</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewport.html#pynimation.viewer.viewport.Viewport.name"><code class="docutils literal notranslate"><span class="pre">Viewport.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewport.html#pynimation.viewer.viewport.Viewport.display"><code class="docutils literal notranslate"><span class="pre">Viewport.display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewport.html#pynimation.viewer.viewport.Viewport.handleRecording"><code class="docutils literal notranslate"><span class="pre">Viewport.handleRecording()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewport.html#pynimation.viewer.viewport.Viewport.initialize"><code class="docutils literal notranslate"><span class="pre">Viewport.initialize()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewport.html#pynimation.viewer.viewport.Viewport.quit"><code class="docutils literal notranslate"><span class="pre">Viewport.quit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewport.html#pynimation.viewer.viewport.Viewport.reshape"><code class="docutils literal notranslate"><span class="pre">Viewport.reshape()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewport.html#pynimation.viewer.viewport.Viewport.rotateCameraWithMouse"><code class="docutils literal notranslate"><span class="pre">Viewport.rotateCameraWithMouse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewport.html#pynimation.viewer.viewport.Viewport.screenshot"><code class="docutils literal notranslate"><span class="pre">Viewport.screenshot()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewport.html#pynimation.viewer.viewport.Viewport.setCameraIsRotating"><code class="docutils literal notranslate"><span class="pre">Viewport.setCameraIsRotating()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewport.html#pynimation.viewer.viewport.Viewport.setCameraTranslationalDirection"><code class="docutils literal notranslate"><span class="pre">Viewport.setCameraTranslationalDirection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewport.html#pynimation.viewer.viewport.Viewport.setMainCamera"><code class="docutils literal notranslate"><span class="pre">Viewport.setMainCamera()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewport.html#pynimation.viewer.viewport.Viewport.startRecording"><code class="docutils literal notranslate"><span class="pre">Viewport.startRecording()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewport.html#pynimation.viewer.viewport.Viewport.startStopRecording"><code class="docutils literal notranslate"><span class="pre">Viewport.startStopRecording()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewport.html#pynimation.viewer.viewport.Viewport.stopRecording"><code class="docutils literal notranslate"><span class="pre">Viewport.stopRecording()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="class_viewport.html#pynimation.viewer.viewport.Viewport.updateCamera"><code class="docutils literal notranslate"><span class="pre">Viewport.updateCamera()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="func_load.html">load</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="func_load.html#pynimation.io.importer.load"><code class="docutils literal notranslate"><span class="pre">load()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">save</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pynimation.io.exporter.save"><code class="docutils literal notranslate"><span class="pre">save()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pynimation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">API</a></li>
+      <li class="breadcrumb-item active">save</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/source/api/func_save.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="save">
+<h1>save<a class="headerlink" href="#save" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="pynimation.io.exporter.save">
+<span class="sig-prename descclassname"><span class="pre">pynimation.io.exporter.</span></span><span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">animation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pynimation/io/exporter.html#save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pynimation.io.exporter.save" title="Link to this definition"></a></dt>
+<dd><p>Generic animation export method.
+Saves <code class="xref py py-attr docutils literal notranslate"><span class="pre">animation</span></code> to <code class="xref py py-attr docutils literal notranslate"><span class="pre">filename</span></code>.
+The format of the saved file will be determined by the extension of
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">filename</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>animation</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="class_animation.html#pynimation.anim.animation.Animation" title="pynimation.anim.animation.Animation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Animation</span></code></a></span>) – animation to save</p></li>
+<li><p><strong>filename</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – path of the file to save the animation to</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="func_load.html" class="btn btn-neutral float-left" title="load" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, Ludovic Hoyet.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

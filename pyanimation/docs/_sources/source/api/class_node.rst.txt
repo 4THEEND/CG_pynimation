@@ -1,0 +1,8 @@
+
+Node
+----
+.. autoclass:: pynimation.common.graph.Node
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

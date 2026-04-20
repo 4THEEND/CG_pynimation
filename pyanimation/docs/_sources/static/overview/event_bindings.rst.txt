@@ -1,0 +1,100 @@
+Event bindings
+==============
+
+Event bindings are used to register functions that will be called on user events like mouse motion, mouse click, key presses, etc.
+
+Events
+------
+
+| Events are specified as :code:`pygame` `Event <https://www.pygame.org/docs/ref/event.html#pygame.event.Event>`_ objects.
+| The :code:`type` attribute describes whether it is a mouse motion event, a key press, a key release etc.
+| The :code:`dict` attribute holds different values depending on the type of motion, for example which key is pressed, with which modifier, or which mouse button is pressed
+| See the :code:`pygame` documentation on `events <https://www.pygame.org/docs/ref/event.html>`_, `keyboard <https://www.pygame.org/docs/ref/key.html>`_ and `mouse <https://www.pygame.org/docs/ref/mouse.html>`_ for a complete reference
+| For example, an event matching the :code:`l` key being pressed can be created with:
+::
+
+  e = Event(pg.KEYDOWN, {"key": pg.K_l})
+
+.. note:: Pressing the :code:`l` key with any modifier will not trigger this event
+
+| To match the :code:`l` key being pressed while the :code:`CTRL` modifier is pressed, we can write:
+::
+
+  e = Event(pg.KEYDOWN, {"key": pg.K_l, "mod": pg.KMOD_NONE | pg.KMOD_CTRL})
+
+Adding bindings
+---------------
+
+| The :class:`~pynimation.viewer.events.EventManager` class is responsible for keeping current event bindings, listening to user events and calling event handlers appropriately
+| Bindings can be be modified either with the :func:`~pynimation.viewer.events.EventManager.bind`, :func:`~pynimation.viewer.events.EventManager.unbind` and :func:`~pynimation.viewer.events.EventManager.rebind` functions, or by setting the :attr:`~pynimation.viewer.events.EventManager.bindings` attribute.
+
+With bind()
+++++++++++++
+
+| With the :func:`~pynimation.viewer.events.EventManager.bind` function, a single binding can be added with:
+::
+
+  # event handler
+  def translateCharacter(character: Character, trans: np.ndarray=[0,0,0]) -> None:
+      character.globalTransform.translate(trans)
+
+
+  event = Event(pg.KEYDOWN, {"key": pg.K_h})
+
+  v.eventManager.bind(event, translateCharacter, args=[character], kwargs={"trans":, [0.1, 0, 0]})
+
+| This code binds the :code:`translateCharacter` function to the :code:`k` key press. The function will be called with :code:`character` as a first argument and :code:`[0.1,0,0]` as a value for the :code:`trans` keyword argument. It will be called anytime a the user presses the k key
+
+
+With the :code:`bindings` attribute
++++++++++++++++++++++++++++++++++++
+
+| A tuple of all current bindings is available through the :attr:`~pynimation.viewer.events.EventManager.bindings` attribute of the :class:`~pynimation.viewer.events.EventManager` class. 
+| In this tuple, event bindings are represented by :class:`~pynimation.viewer.events.Binding` objects, containing a :code:`pygame` event, and a `partial <https://docs.python.org/fr/3.9/library/functools.html#partial-objects>`_ object.
+| A partial object contains a function and a set of values for its arguments, it is directly callable, and it will call the function with the set of values. For example, a partial object equivalent to the handler of the last example can be constructed with:
+::
+
+  partialHandler = partial(translateCharacter, character, trans=[0.01, 0, 0]) 
+
+.. warning:: Tuples are immutable. So modifying the :code:`bindings` tuple directly will not work. To modify the bindings this way, construct a new :code:`Tuple` with modified bindings and assign it to the :code:`bindings` attribute
+
+| A :class:`~pynimation.viewer.events.Binding` object can then be constructed and added to existing bindings with:
+::
+
+  # construct binding object
+  binding = Binding(
+      event, [partialHandler]
+  )
+
+  # construct the new tuple of bindings
+  newbindings = (*v.eventManager.bindings, binding)
+
+  # set the new tuple of bindings
+  v.eventManager.bindings = newbindings
+
+
+Accessing the runtime :code:`Event`
+-----------------------------------
+
+| :code:`pygame` events received at runtime sometime contain additional information that can be useful for the handler. For example a :code:`pg.MOUSEMOTION` event received when the user moves the mouse contains a :code:`rel` and a :code:`pos` property inside its :code:`dict` attribute that gives the position of the mouse and its relative position since the last mouse motion event.
+| To retrieve these informations, a handler can name one of its parameters :code:`event`, and the :class:`~pynimation.viewer.events.EventManager` will set its value to the :code:`Event` received at runtime when calling the handler.
+| For example, to print the current mouse position:
+::
+
+  # print position of the mouse when it moves
+  def printMousePos(event: Optional[Event] = None) -> None:
+      if event is not None and "pos" in event.dict:
+          print(event.pos)
+
+
+  mouseevent = Event(pg.MOUSEMOTION, {})
+
+  v.eventManager.bind(event, printMousePos)
+  
+
+
+Example
+-------
+
+.. literalinclude:: ../../../examples/bindings.py
+

@@ -1,0 +1,8 @@
+
+EventManager
+------------
+.. autoclass:: pynimation.viewer.events.EventManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

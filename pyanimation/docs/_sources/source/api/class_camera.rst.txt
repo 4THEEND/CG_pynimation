@@ -1,0 +1,8 @@
+
+Camera
+------
+.. autoclass:: pynimation.viewer.camera.Camera
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

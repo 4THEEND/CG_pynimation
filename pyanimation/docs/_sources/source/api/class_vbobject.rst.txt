@@ -1,0 +1,8 @@
+
+VBObject
+--------
+.. autoclass:: pynimation.viewer.vbo.VBObject
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

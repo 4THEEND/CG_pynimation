@@ -1,0 +1,8 @@
+
+Exporter
+--------
+.. autoclass:: pynimation.io.exporter.Exporter
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

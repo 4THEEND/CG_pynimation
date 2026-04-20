@@ -1,0 +1,8 @@
+
+LocalOrientationWithoutRootMetric
+---------------------------------
+.. autoclass:: pynimation.anim.metrics.local_orientation_no_root.LocalOrientationWithoutRootMetric
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

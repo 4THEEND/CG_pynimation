@@ -1,0 +1,177 @@
+Common Issues
+=============
+
+Failed to compile shader on Linux
+---------------------------------
+
+The full error is some variation of:
+::
+
+  Shader compile failure (0): b'0:1(10): error: GLSL 3.30 is not supported
+
+To fix this error, force the :code:`OpenGL` version using the :code:`MESA_GL_VERSION_OVERRIDE` environment variable
+::
+
+  $ export MESA_GL_VERSION_OVERRIDE=3.3
+
+or for a single command:
+::
+
+  $ MESA_GL_VERSION_OVERRIDE=3.3 python command.py
+
+
+Context error
+---------------------------------
+
+Some distributions (in particular those using Wayland that do not use OpenGL but OpenGL ES) have the following error (a context of 0 is considered to be invalid in these systems)
+::
+
+  OpenGL.error.Error: Attempt to retrieve context when no valid context
+
+To fix this error, you need to comment the following lines in the 'site-packages/OpenGL/contextdata.py' file
+::
+
+  raise error.Error(
+                """Attempt to retrieve context when no valid context"""
+  )
+
+
+404 Client Error while installing with pip on Linux
+---------------------------------------------------
+
+| This error happens when installing PyNimation or its requirements with :code:`pip`
+| The full error is some variation of:
+::
+
+  Looking in indexes: https://pypi.org/simple, https://gitlab.inria.fr/api/v4/projects/18692/packages/pypi/simple
+  Collecting fbxsdkpy==2020.1.post1 (from -r requirements.txt (line 3)) 
+  Could not install packages due to an EnvironmentError: 404 Client Error: Not Found for url: https://pypi.org/simple/fbxsdkpy/
+
+| This is a `bug <https://github.com/pypa/pip/issues/6799>`_ with a version of :code:`pip`, that causes an error to be raised when the :code:`fbxsdkpy` package is not found on the official Python package index (:code:`https://pypi.org/simple/`, default value for :code:`--index-url`). It should instead ignore that error and look into the second index (:code:`https://gitlab.inria.fr/api/v4/projects/18692/packages/pypi/simple`, given as :code:`--extra-index-url`).
+
+Update pip
+***********
+
+| To fix this error, first try updating :code:`pip`:
+::
+
+  $ pip install --upgrade pip
+
+
+Install with the gitlab index as main index
+*******************************************
+
+| If the error persists, try installing the :code:`fbxsdkpy` package on its own, with the gitlab index as the main index:
+::
+
+  $ pip install --index-url https://gitlab.inria.fr/api/v4/projects/18692/packages/pypi/simple fbxsdkpy
+
+
+ImportError: DLL load failed while importing fbx
+------------------------------------------------
+
+The full error is some variation of:
+::
+
+  ImportError: DLL load failed while importing fbx: Le module spécifié est introuvable.
+
+Check if fbxsdkpy is installed
+******************************
+::
+
+  $ pip show fbxsdkpy
+
+  Name: fbxsdkpy
+  Version: 2020.1.post1
+  Summary: None
+  Home-page: None
+  Author: None
+  Author-email: None
+  License: None
+  Location: /home/john/.local/lib/envs/pynimation-_VsD9yDQ/lib/python3.8/site-packages
+  Requires:
+  Required-by:
+
+It should be installed with the requirements, if not, run
+::
+  
+  $ pip --verbose install --extra-index-url https://gitlab.inria.fr/api/v4/projects/18692/packages/pypi/simple fbxsdkpy
+
+Verify fbxsdkpy is in the python path
+*************************************
+
+Replace :code:`<Location>` with the :code:`Location` field of :code:`pip show fbxsdkpy`
+::
+
+  $ python -c "import sys; print('<Location>' in sys.path)"
+  True
+
+For example with :code:`Location` obtained in the last section
+::
+
+  $ python -c "import sys; print('/home/john/.local/lib/envs/pynimation-_VsD9yDQ/lib/python3.8/site-packages' in sys.path)"
+  True
+
+If :code:`False` is returned, add :code:`<Location>` to your python path. See :ref:`Add to Python path`
+
+Verify the python binary is 64bits
+**********************************
+::
+
+  $ python -c "import sys;print(sys.maxsize > 2**32)" 
+  True
+
+If :code:`False` is returned, install a 64bits version of python from `python.org <https://python.org>`_ or using your package manager
+
+
+Check if the dependencies are installed
+***************************************
+
+Windows
++++++++
+
+| You most likely need to install the latest C++ compiler and redistributables from microsoft
+| They can be installed separately: 
+- `Separate redistributable installer <https://aka.ms/vs/16/release/vc_redist.x64.exe>`_
+- `Separate build tools installer <https://aka.ms/vs/16/release/vs_buildtools.exe>`_
+| or with VisualStudio by choosing "C++ Development"
+|
+| If the error persists, missing dependencies can found using `this tool <https://github.com/lucasg/Dependencies>`_
+| Once it is installed, :code:`File > Open`, choose the :code:`fbx.pyd` file installed with :code:`fbxsdkpy`. Its path can be found with :code:`pip show --files fbxsdkpy`
+
+Linux
++++++
+
+::
+
+  $ ldd $(pip show --files fbxsdkpy|grep -E '^Location'|cut -d' ' -f2)/$(pip show --files fbxsdkpy|grep -E 'fbx\..*so$'|tr -d ' ')
+
+      linux-vdso.so.1 (0x00007ffea7fb3000)
+      libxml2-a7aef045.so.2.9.1 => /home/john/.local/lib/envs/pynimation-_VsD9yDQ/lib/python3.8/site-packages/fbxsdkpy.libs/libxml2-a7aef045.so.2.9.1 (0x00007fbef8f59000)
+      libz-d8a329de.so.1.2.7 => /home/john/.local/lib/envs/pynimation-_VsD9yDQ/lib/python3.8/site-packages/fbxsdkpy.libs/libz-d8a329de.so.1.2.7 (0x00007fbef8d42000)
+      libstdc++.so.6 => /usr/lib/libstdc++.so.6 (0x00007fbef8b2f000)
+      libm.so.6 => /usr/lib/libm.so.6 (0x00007fbef89e9000)
+      libgcc_s.so.1 => /usr/lib/libgcc_s.so.1 (0x00007fbef89cf000)
+      libpthread.so.0 => /usr/lib/libpthread.so.0 (0x00007fbef89ad000)
+      libc.so.6 => /usr/lib/libc.so.6 (0x00007fbef87e2000)
+      libdl.so.2 => /usr/lib/libdl.so.2 (0x00007fbef87dc000)
+      liblzma-07b5b5c8.so.5.2.2 => /home/john/.local/lib/envs/pynimation-_VsD9yDQ/lib/python3.8/site-packages/fbxsdkpy.libs/liblzma-07b5b5c8.so.5.2.2 (0x00007fbef85b5000)
+      /usr/lib64/ld-linux-x86-64.so.2 (0x00007fbefa14d000)
+
+Prefer using :code:`lddtree` instead of :code:`ldd`
+::
+
+  $ lddtree $(pip show --files fbxsdkpy|grep -E '^Location'|cut -d' ' -f2)/$(pip show --files fbxsdkpy|grep -E 'fbx\..*so$'|tr -d ' ')
+
+      libxml2-a7aef045.so.2.9.1 => /home/john/.local/lib/envs/pynimation-_VsD9yDQ/lib/python3.8/site-packages/fbxsdkpy.libs/libxml2-a7aef045.so.2.9.1
+          libdl.so.2 => /usr/lib/libdl.so.2
+              ld-linux-x86-64.so.2 => /usr/lib/ld-linux-x86-64.so.2
+          liblzma-07b5b5c8.so.5.2.2 => /home/john/.local/lib/envs/pynimation-_VsD9yDQ/lib/python3.8/site-packages/fbxsdkpy.libs/liblzma-07b5b5c8.so.5.2.2
+      libz-d8a329de.so.1.2.7 => /home/john/.local/lib/envs/pynimation-_VsD9yDQ/lib/python3.8/site-packages/fbxsdkpy.libs/libz-d8a329de.so.1.2.7
+      libstdc++.so.6 => /usr/lib/libstdc++.so.6
+      libm.so.6 => /usr/lib/libm.so.6
+      libgcc_s.so.1 => /usr/lib/libgcc_s.so.1
+      libpthread.so.0 => /usr/lib/libpthread.so.0
+      libc.so.6 => /usr/lib/libc.so.6
+
+If any librairies are not found, install them

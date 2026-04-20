@@ -1,0 +1,8 @@
+
+Transform
+---------
+.. autoclass:: pynimation.common.transform.Transform
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

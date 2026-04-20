@@ -1,0 +1,8 @@
+
+FBXImporter
+-----------
+.. autoclass:: pynimation.io.fbx.importer.FBXImporter
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

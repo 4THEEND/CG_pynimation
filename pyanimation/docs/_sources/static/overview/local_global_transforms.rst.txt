@@ -1,0 +1,8 @@
+Local and Global Transforms
+===========================
+
+**Local transforms** refer to spatial transforms that are specified relative to a reference system that is not the world reference. For example local transforms of a joint are specified relative to its parent. It is often needed to ultimately express a local transform relative to world reference, as a **global transform**, to later apply it to vertices in a vertex shader for example.
+
+In PyNimation, local and global transforms appear in :class:`~pynimation.anim.skeleton.Skeleton`, :class:`~pynimation.viewer.scene_graph.SceneGraph` and :class:`~pynimation.anim.frame.Frame`, with the first two inheriting from the same :class:`~pynimation.common.transform_graph.TransformGraph` base class. In all these cases, **global transforms are kept up to date with the local transforms** they correspond to.
+
+

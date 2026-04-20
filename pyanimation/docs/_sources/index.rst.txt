@@ -1,0 +1,53 @@
+.. pynimation documentation master file, created by
+   sphinx-quickstart on Wed Sep 30 16:27:30 2020.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to pynimation's documentation!
+======================================
+
+.. autosummary::
+  :recursive:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Introduction
+
+   static/introduction/introduction
+   static/introduction/getting_started
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Overview
+
+   static/overview/module_organization
+   static/overview/local_global_transforms
+   static/overview/loop_callbacks
+   static/overview/event_bindings
+   source/default_bindings
+   static/overview/troubleshooting
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Development
+
+   static/development/requirements
+   static/development/coding_style
+   static/development/type_hints
+   static/development/documentation
+   
+.. toctree::
+   :maxdepth: 1
+   :caption: Class reference
+
+   source/api/index
+
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

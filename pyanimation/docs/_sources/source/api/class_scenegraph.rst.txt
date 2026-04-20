@@ -1,0 +1,8 @@
+
+SceneGraph
+----------
+.. autoclass:: pynimation.viewer.scene_graph.SceneGraph
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

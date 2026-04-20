@@ -1,0 +1,8 @@
+
+MotionGraph
+-----------
+.. autoclass:: pynimation.anim.motiongraph.motiongraph.MotionGraph
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

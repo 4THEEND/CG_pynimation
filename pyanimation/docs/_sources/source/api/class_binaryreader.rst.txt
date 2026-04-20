@@ -1,0 +1,8 @@
+
+BinaryReader
+------------
+.. autoclass:: pynimation.io.binaryreader.BinaryReader
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

@@ -1,0 +1,8 @@
+
+Capsule
+-------
+.. autoclass:: pynimation.viewer.objects.capsule.Capsule
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

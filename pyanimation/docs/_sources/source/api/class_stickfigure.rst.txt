@@ -1,0 +1,8 @@
+
+StickFigure
+-----------
+.. autoclass:: pynimation.viewer.stickfigure.StickFigure
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

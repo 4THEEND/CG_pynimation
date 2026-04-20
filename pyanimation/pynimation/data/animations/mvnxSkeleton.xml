@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<skeleton name = "Skeleton" id="mvnx">
+  <!-- mvnx skeleton-->
+  <Joint name = "Pelvis" id = "1">
+    <Joint name = "L5" id = "2">
+      <Joint name = "L3" id = "3">
+        <Joint name = "T12" id = "4">
+          <Joint name = "T8" id = "5">
+            <Joint name = "Neck" id = "6">
+              <Joint name = "Head" id = "7">
+              </Joint>
+            </Joint>
+            <Joint name = "RightShoulder" id = "8">
+              <Joint name = "RightUpperArm" id = "9">
+                <Joint name = "RightForeArm" id = "10">
+                  <Joint name = "RightHand" id = "11">
+                  </Joint>
+                </Joint>
+              </Joint>
+            </Joint>
+            <Joint name = "LeftShoulder" id  = "12">
+              <Joint name = "LeftUpperArm" id = "13">
+                <Joint name = "LeftForeArm" id = "14">
+                  <Joint name =" LeftHand" id = "15">
+                  </Joint>
+                </Joint>
+              </Joint>
+            </Joint>
+          </Joint>
+        </Joint>
+      </Joint>
+    </Joint>
+    <Joint name = "RightUpperLeg" id = "16">
+      <Joint name = "RightLowerLeg" id = "17">
+        <Joint name = "RightFoot" id = "18">
+          <Joint name = "RightToe" id = "19">            
+          </Joint>
+        </Joint>
+      </Joint>
+    </Joint>
+    <Joint name = "LeftUpperLeg" id = "20">
+      <Joint name = "LeftLowerLeg" id = "21">
+        <Joint name = "LeftFoot" id = "22">
+          <Joint name= "LeftToe" id = "23">
+          </Joint>
+        </Joint>
+      </Joint>
+    </Joint>
+  </Joint>
+</skeleton>

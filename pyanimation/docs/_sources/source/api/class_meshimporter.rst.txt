@@ -1,0 +1,8 @@
+
+MeshImporter
+------------
+.. autoclass:: pynimation.viewer.io.mesh_importer.MeshImporter
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

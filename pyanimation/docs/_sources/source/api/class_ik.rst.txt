@@ -1,0 +1,8 @@
+
+IK
+--
+.. autoclass:: pynimation.anim.tools.ik.IK
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

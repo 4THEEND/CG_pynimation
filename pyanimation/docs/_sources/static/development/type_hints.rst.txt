@@ -1,0 +1,31 @@
+Type hints
+==========
+
+Type hints are a way to type python code so that it can be statically checked by an external tool like `Mypy <https://github.com/python/mypy>`_. Integrating this tool to the editor gives a similar experience to developing in a typed language like Java or C++, where missing attributes, paramater mismatch and more complex errors are reported before execution    
+
+Usage
+-----
+| With the exception of a few functions that utilize dynamic typing, PyNimation's code is fully typed, and Mypy should be able to check 99% of the API calls    
+| As of now, a limitation is that typing is not yet supported in numpy. It is however scheduled for the next release
+| To avoid getting errors about missing types of external libraries you can use Mypy's :code:`--ignore-missing-imports` options
+
+Typing your code
+----------------
+PyNimation uses in-code type hints rather than external stub files containing functions and attributes types    
+
+Circular imports
+****************
+Circular imports issues can arise from importing types used in type checking.
+A solution is to use `TYPE_CHECKING <https://docs.python.org/3/library/typing.html#typing.TYPE_CHECKING>`_ to import types that are only used in type checking and to put them in a string in the type hint
+
+Existing code
+*************
+For existing code, a quick way to add types is `MonkeyType <https://github.com/Instagram/MonkeyType>`_. This tool will register types used at runtime and add them to the code. Although the result is not perfect, it can be a good starting point
+
+Ressources :
+
+- `Type hints cheat sheet <https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html>`_
+
+- `Carl Meyer - Type-checked Python in the real world - PyCon 2018 <https://www.youtube.com/watch?v=pMgmKJyWKn8>`_
+
+

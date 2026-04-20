@@ -1,0 +1,23 @@
+Introduction
+************
+
+Description
+===========
+
+PyNimation is a framework for editing, visualizing and studying skeletal 3D animations, it was more particularly designed to process motion capture data. It stems from the wish to utilize Python's data science capabilities and ease of use for human motion research. 
+
+Features
+========
+* Import animations from formats:
+
+  * BVH
+  * FBX
+  * MVNX
+
+* Export animations to formats:
+
+  * FBX
+* Access and modify joint transforms as numpy arrays
+* Common tools to manipulate rotations and spatial transforms
+* Interactive OpenGL viewer for animations and objects
+* Animate skinned meshes

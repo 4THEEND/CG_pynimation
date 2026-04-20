@@ -1,0 +1,8 @@
+
+Animatable
+----------
+.. autoclass:: pynimation.viewer.animatable.Animatable
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

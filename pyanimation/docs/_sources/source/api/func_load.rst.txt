@@ -1,0 +1,4 @@
+load
+----
+
+.. autofunction:: pynimation.io.importer.load

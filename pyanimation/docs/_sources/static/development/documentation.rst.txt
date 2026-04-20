@@ -1,0 +1,87 @@
+Documentation
+=============
+
+Style
+-----
+| PyNimation uses numpy style docstrings (`example <https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html>`_)
+| Here is an example of how a typical class can be documented:
+
+::
+  
+  class Example():
+    """
+    This is an example class, it does various things
+
+    Attributes          <----- attributes of the class (accessible with self.attribute)
+    ----------                 (TYPES NEEDED)
+    ints: List[int]:
+      a list of int
+
+    strs: List[str]:
+      a list of strings
+      
+
+    Parameters          <----- parameters of the constructor (TYPES NEEDED)
+    ----------
+    ints: List[int]:
+      a list of int
+
+    Examples
+    --------
+    >>> e = Example([1])
+    >>> e.strs
+    ["1"]
+    >>> e.dostuff(1,[])
+    "stuff has been done"
+    """
+
+    def __init__(self, ints: List[int]) -> None:
+      self.ints = ints
+      self.strs = [ str(i) for i in ints ]
+
+    def dostuff(self, input: int, otherinput: str) -> str:
+      """
+      Does stuff with input
+
+      Parameters      <----- parameters of the function (TYPES NOT NEEDED)
+      ----------
+      input:
+        input int used to do stuff
+
+      otherinput:
+        input str used to do other stuff
+
+      Returns
+      -------
+      str:           <---- return type
+        what stuff has been done
+
+      Examples
+      --------
+      >>> e = Example([1])
+      >>> e.dostuff(1,[])
+      "stuff has been done"
+
+      Note
+      ----
+      You need input and otherinput to be such that ... for stuff to be done correctly
+      """
+
+| Indicating the types attributes and parameters in the docstring is necessary except in function :code:`Parameters` sections, where :code:`sphinx` reads them from type hints
+
+Generation
+----------
+| PyNimation uses `Sphinx <https://www.sphinx-doc.org/en/master/>`_ to generate HTML documentation from :code:`rst` files and docstrings inside the source code, these files and the configuration for :code:`sphinx` can be found in the :code:`docs` directory.
+| To generate the documentation, first generate documentation pages for classes of the API using:
+
+::
+
+  python docs/generate_class_docs.py
+
+| Then generate the html with:
+
+::
+
+  sphinx-build -b html docs public
+
+| Note that :code:`sphinx` also supports other output formats like LaTeX for compiling PDFs

@@ -1,0 +1,8 @@
+
+Metric
+------
+.. autoclass:: pynimation.anim.metrics.metric.Metric
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

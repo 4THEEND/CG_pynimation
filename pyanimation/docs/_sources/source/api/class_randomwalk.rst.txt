@@ -1,0 +1,8 @@
+
+RandomWalk
+----------
+.. autoclass:: pynimation.anim.motiongraph.randomwalk.RandomWalk
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

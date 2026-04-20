@@ -1,0 +1,8 @@
+
+Character
+---------
+.. autoclass:: pynimation.viewer.character.Character
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

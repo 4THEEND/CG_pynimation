@@ -1,0 +1,8 @@
+
+FBXExporterSettings
+-------------------
+.. autoclass:: pynimation.io.fbx.exporter.FBXExporterSettings
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

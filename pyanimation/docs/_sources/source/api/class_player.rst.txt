@@ -1,0 +1,8 @@
+
+Player
+------
+.. autoclass:: pynimation.viewer.player.Player
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:

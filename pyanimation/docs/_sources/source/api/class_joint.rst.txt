@@ -1,0 +1,8 @@
+
+Joint
+-----
+.. autoclass:: pynimation.anim.joint.Joint
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members:
