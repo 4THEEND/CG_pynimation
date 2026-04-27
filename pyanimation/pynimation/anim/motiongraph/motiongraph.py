@@ -156,15 +156,29 @@ class MotionGraph:
         )
 
         # TODO Function to add a new animation to the motion graph
+        self._addMotionNodes(anim)
+
+        
+        
         return
 
     def _addMotionNodes(self, anim: "Animation") -> None:
 
+        startingId = len(self.nodes)
+
         # TODO Add all the frames as MotionGraph.MotionGraphNode to the current graph
+        for i in range(len(anim.frames)):
+            self.nodes.append(self.MotionGraphNode(anim.frames[i], startingId + i))
 
         # TODO Add original transitions between the frames (using the addTransition method)
+        for i in range(startingId, len(self.nodes) - 1):
+            self.nodes[i].addTransition(i + 1, anim.frames[i - startingId].localTransforms)
+        
         
         # TODO Handle the last transition in case the animation is cyclic
+        if anim.isCyclic:
+            self.nodes[len(self.nodes) - 1].addTransition(startingId, anim.frames[len(anim.frames) - 1].localTransforms)
+
         return    
 
     def _addNewTransitions(
